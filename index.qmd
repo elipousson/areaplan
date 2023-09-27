@@ -1,0 +1,32 @@
+# About {.unnumbered}
+
+This site collects material related to my area planning work in R.
+
+-   [Area Planning Work in R](//slides/area-planning-work.html) - 2023 September 27
+
+## Related work
+
+### Presentations
+
+-   [Mapping spatial data with R, ggplot2, and more](https://elipousson.github.io/mapping-r-ggplot2/mapping-introduction.html) - 2023 May 9
+-   [Using R as your GIS](https://elipousson.github.io/presentation-tugis2023): Applying R to community planning and working with spatial data - 2023 August 2
+
+### General packages
+
+- [sfext](https://elipousson.github.io/sfext)
+- [getdata](https://elipousson.github.io/getdata)
+- [maplayer](https://elipousson.github.io/maplayer)
+
+## Local data packages
+
+- [mapbaltimore](https://elipousson.github.io/mapbaltimore)
+- [bcpss](https://elipousson.github.io/bcpss)
+- [mapmaryland](https://elipousson.github.io/mapmaryland)
+- [marylandedu](https://elipousson.github.io/marylandedu)
+
+## Planning-related packages
+
+- [crashapi](https://elipousson.github.io/crashapi)
+- [getACS](https://elipousson.github.io/crashapi)
+- [feltr](https://elipousson.github.io/feltr)
+

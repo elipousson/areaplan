@@ -1,0 +1,20 @@
+project:
+  type: website
+
+book:
+  title: "Area Planning Work with R"
+  author: "Eli Pousson"
+  date: "9/27/2023"
+  chapters:
+    - index.qmd
+
+# bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+

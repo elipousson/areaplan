@@ -1,0 +1,185 @@
+---
+title: "Area Planning Work with R"
+author: "Eli Pousson"
+format: revealjs
+slide-level: 3
+code-link: true
+scrollable: true
+---
+
+# About
+
+# Package development
+
+## What packages am I using?
+
+My data analysis and mapping work depends on a tall stack of open-source packages especially from the `{tidyverse}` along with the [rOpenSci]() and rspatial communities. 
+
+I have a lot of favorite R packages across a few different categories:
+
+- development
+- programming
+- visualization
+- data management
+
+### Packages I use for development
+
+- `{usethis}`
+- `{devtools}`
+- `{sinew}`
+- `{testthat}`
+- `{pkgdown}`
+
+### Packages I use for programming
+
+- `{sf}`
+- `{dplyr}` (and `{vctrs}`)
+- `{rlang}`
+- `{cli}`
+- `{httr2}`
+
+### Packages I use for visualization
+
+- `{mapboxapi}`
+- `{ggplot2}` (with Adobe Illustrator sometimes)
+- `{mapview}`
+- `{feltr}` (with Felt)
+- `{gt}`
+
+### Packages I use for data management
+
+- `{osmdata}` (with OpenStreetMap)
+- `{rairtable}` (with Airtable)
+- `{googlesheets4}` (with Google Sheets)
+- `{officer}` (with Microsoft Word)
+
+## When did I start building packages?
+
+- June 2019: Started learning R
+- Oct. 2020: Started `{mapbaltimore}` after a webinar on working with the `{mapboxapi}` package
+- Dec. 2020: Started contributing to open-source packages, `{FlickrAPI}`, `{esri2sf}`, and `{mapboxapi}`
+- November 2021: `{crashapi}` for accessing the National Highway Traffic Safety Administration (NHTSA) Fatality Analysis Reporting System (FARS) API
+
+## What types of packages am I working on?
+
+- local data packages
+- data access packages
+- analysis and visualization packages
+
+## How did I get to this current approach?
+
+- June 2022: Split `{overedge}` into a few smaller packages: `{sfext}`, `{getdata}`, and `{maplayer}`
+- `{streetmixr}` for working with the Street Mix API
+- January 2023: `{officerExtras}` for extending the `{officer}` package (and working with tables and heading in Microsoft Word)
+- May 2023: `{feltr}` for working with the Felt API (Felt is a new, highly recommend online mapping application)
+
+## How did I get to this current approach?
+
+- July 2023: `{getACS}` for downloading `{tidycensus}` data, adding supplementary metadata, and making plots and tables
+- September 2023: `{sharepointr}` for reading and writing files and lists from SharePoint
+
+## What are some local data projects am I working on?
+
+A few packages:
+
+- `{bcpss}`
+- `{marylandedu}`
+- `{baltimorecensus}`
+- `{baltimoremls}`
+
+## What are some local data projects am I working on?
+
+A few data analyses (all WIP):
+
+- bcpsstransportation*
+- baltimorecrash*
+- baltimoretaxsale
+
+## What am I hoping to try next?
+
+- `{targets}`
+- `{rdeck}`
+- `{arcgislayers}`
+
+# Planning with R
+
+## All the little things
+
+- Tables
+- Graphics
+- Maps
+- Call-outs
+
+## Making the little things takes a lot of work
+
+- Data import
+- Data transformation
+- Managing text
+- Managing multiple output formats
+
+## Example: Tables with demographic data using `{getACS}`
+
+- What do you do in advance?
+- What do you do as needed?
+
+## Setup
+
+```{r}
+# pak::pkg_install("elipousson/getACS")
+library(getACS)
+library(tidyverse)
+```
+
+## First steps
+
+- Get data
+- Combine with metadata
+- Recalculate variables
+- Use areal interpolation as needed
+
+---
+
+Using getACS to get data, combine with metadata, and recalculate estimates as a share of the denominator:
+
+```{r}
+delmarva_acs <- map(
+  c("MD", "DC", "VA"),
+  ~ get_acs_geographies(
+  geography = c("county", "state"),
+  table = "B08134",
+  state = .x,
+  quiet = TRUE
+  )
+)
+
+dc_acs <- delmarva_acs[[2]]
+
+dc_acs
+```
+
+## Next steps
+
+- Subset data to area
+- Recode values if needed
+- Create table or visualization
+
+```{r}
+commute_acs_tbl <- dc_acs |> 
+  filter_acs(
+    indent == 1,
+    line_number >= 11,
+    geography = "state"
+    ) |> 
+  select_acs(.name_col = NULL) |> 
+  gt_acs(
+    column_title_label = "Mode of transportation",
+    table = dc_acs$table_id
+  )
+```
+
+----
+
+```{r}
+commute_acs_tbl
+```
+
