@@ -1,0 +1,128 @@
+[
+  {
+    "objectID": "slides/area-planning-work.html#what-packages-am-i-using",
+    "href": "slides/area-planning-work.html#what-packages-am-i-using",
+    "title": "Area Planning Work with R",
+    "section": "What packages am I using?",
+    "text": "What packages am I using?\nMy data analysis and mapping work depends on a tall stack of open-source packages especially from the tidyverse along with the rOpenSci and rspatial communities.\nI have a lot of favorite R packages across a few different categories:\n\ndevelopment\nprogramming\nvisualization\ndata management"
+  },
+  {
+    "objectID": "slides/area-planning-work.html#when-did-i-start-building-packages",
+    "href": "slides/area-planning-work.html#when-did-i-start-building-packages",
+    "title": "Area Planning Work with R",
+    "section": "When did I start building packages?",
+    "text": "When did I start building packages?\n\nJune 2019: Started learning R\nOct. 2020: Started mapbaltimore after a webinar on working with the {mapboxapi} package\nDec. 2020: Started contributing to open-source packages, {FlickrAPI}, esri2sf, and {mapboxapi}\n\nNovember 2021: {crashapi} for accessing the National Highway Traffic Safety Administration (NHTSA) Fatality Analysis Reporting System (FARS) API"
+  },
+  {
+    "objectID": "slides/area-planning-work.html#what-types-of-packages-am-i-working-on",
+    "href": "slides/area-planning-work.html#what-types-of-packages-am-i-working-on",
+    "title": "Area Planning Work with R",
+    "section": "What types of packages am I working on?",
+    "text": "What types of packages am I working on?\n\nlocal data packages\ndata access packages\nanalysis and visualization packages"
+  },
+  {
+    "objectID": "slides/area-planning-work.html#how-did-i-get-to-this-current-approach",
+    "href": "slides/area-planning-work.html#how-did-i-get-to-this-current-approach",
+    "title": "Area Planning Work with R",
+    "section": "How did I get to this current approach?",
+    "text": "How did I get to this current approach?\n\nJune 2022: Split {overedge} into a few smaller packages: sfext, getdata, and maplayer\n\n\n{streetmixr} for working with the Street Mix API\nJanuary 2023: officerExtras for extending the officer package (and working with tables and heading in Microsoft Word)\nMay 2023: feltr for working with the Felt API (Felt is a new, highly recommend online mapping application)"
+  },
+  {
+    "objectID": "slides/area-planning-work.html#how-did-i-get-to-this-current-approach-1",
+    "href": "slides/area-planning-work.html#how-did-i-get-to-this-current-approach-1",
+    "title": "Area Planning Work with R",
+    "section": "How did I get to this current approach?",
+    "text": "How did I get to this current approach?\n\nJuly 2023: getACS for downloading tidycensus data, adding supplementary metadata, and making plots and tables\nSeptember 2023: sharepointr for reading and writing files and lists from SharePoint"
+  },
+  {
+    "objectID": "slides/area-planning-work.html#what-are-some-local-data-projects-am-i-working-on",
+    "href": "slides/area-planning-work.html#what-are-some-local-data-projects-am-i-working-on",
+    "title": "Area Planning Work with R",
+    "section": "What are some local data projects am I working on?",
+    "text": "What are some local data projects am I working on?\nA few packages:\n\nbcpss\nmarylandedu\nbaltimorecensus\n{baltimoremls}"
+  },
+  {
+    "objectID": "slides/area-planning-work.html#what-are-some-local-data-projects-am-i-working-on-1",
+    "href": "slides/area-planning-work.html#what-are-some-local-data-projects-am-i-working-on-1",
+    "title": "Area Planning Work with R",
+    "section": "What are some local data projects am I working on?",
+    "text": "What are some local data projects am I working on?\nA few data analyses (all WIP):\n\nbcpsstransportation*\nbaltimorecrash*\nbaltimoretaxsale"
+  },
+  {
+    "objectID": "slides/area-planning-work.html#what-am-i-hoping-to-try-next",
+    "href": "slides/area-planning-work.html#what-am-i-hoping-to-try-next",
+    "title": "Area Planning Work with R",
+    "section": "What am I hoping to try next?",
+    "text": "What am I hoping to try next?\n\ntargets\nrdeck\n{arcgislayers}"
+  },
+  {
+    "objectID": "slides/area-planning-work.html#all-the-little-things",
+    "href": "slides/area-planning-work.html#all-the-little-things",
+    "title": "Area Planning Work with R",
+    "section": "All the little things",
+    "text": "All the little things\n\nTables\nGraphics\nMaps\nCall-outs"
+  },
+  {
+    "objectID": "slides/area-planning-work.html#making-the-little-things-takes-a-lot-of-work",
+    "href": "slides/area-planning-work.html#making-the-little-things-takes-a-lot-of-work",
+    "title": "Area Planning Work with R",
+    "section": "Making the little things takes a lot of work",
+    "text": "Making the little things takes a lot of work\n\nData import\nData transformation\nManaging text\nManaging multiple output formats"
+  },
+  {
+    "objectID": "slides/area-planning-work.html#example-tables-with-demographic-data-using-getacs",
+    "href": "slides/area-planning-work.html#example-tables-with-demographic-data-using-getacs",
+    "title": "Area Planning Work with R",
+    "section": "Example: Tables with demographic data using {getACS}\n",
+    "text": "Example: Tables with demographic data using {getACS}\n\n\nWhat do you do in advance?\nWhat do you do as needed?"
+  },
+  {
+    "objectID": "slides/area-planning-work.html#setup",
+    "href": "slides/area-planning-work.html#setup",
+    "title": "Area Planning Work with R",
+    "section": "Setup",
+    "text": "Setup"
+  },
+  {
+    "objectID": "slides/area-planning-work.html#first-steps",
+    "href": "slides/area-planning-work.html#first-steps",
+    "title": "Area Planning Work with R",
+    "section": "First steps",
+    "text": "First steps\n\nGet data\nCombine with metadata\nRecalculate variables\nUse areal interpolation as needed"
+  },
+  {
+    "objectID": "slides/area-planning-work.html#next-steps",
+    "href": "slides/area-planning-work.html#next-steps",
+    "title": "Area Planning Work with R",
+    "section": "Next steps",
+    "text": "Next steps\n\nSubset data to area\nRecode values if needed\nCreate table or visualization"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About",
+    "section": "",
+    "text": "This site collects material related to my area planning work in R.\n\nArea Planning Work in R - 2023 September 27\n\n\n\n\n\n\nMapping spatial data with R, ggplot2, and more - 2023 May 9\nUsing R as your GIS: Applying R to community planning and working with spatial data - 2023 August 2\n\n\n\n\n\nsfext\ngetdata\nmaplayer\n\n\n\n\n\n\nmapbaltimore\nbcpss\nmapmaryland\nmarylandedu\n\n\n\n\n\ncrashapi\ngetACS\nfeltr"
+  },
+  {
+    "objectID": "index.html#related-work",
+    "href": "index.html#related-work",
+    "title": "About",
+    "section": "",
+    "text": "Mapping spatial data with R, ggplot2, and more - 2023 May 9\nUsing R as your GIS: Applying R to community planning and working with spatial data - 2023 August 2\n\n\n\n\n\nsfext\ngetdata\nmaplayer"
+  },
+  {
+    "objectID": "index.html#local-data-packages",
+    "href": "index.html#local-data-packages",
+    "title": "About",
+    "section": "",
+    "text": "mapbaltimore\nbcpss\nmapmaryland\nmarylandedu"
+  },
+  {
+    "objectID": "index.html#planning-related-packages",
+    "href": "index.html#planning-related-packages",
+    "title": "About",
+    "section": "",
+    "text": "crashapi\ngetACS\nfeltr"
+  }
+]

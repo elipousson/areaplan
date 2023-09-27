@@ -1,6 +1,9 @@
 project:
   type: website
 
+execute:
+  freeze: auto
+
 book:
   title: "Area Planning Work with R"
   author: "Eli Pousson"
