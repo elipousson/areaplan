@@ -209,3 +209,104 @@ commute_acs_tbl <- dc_acs |>
 commute_acs_tbl
 ```
 
+## Example: Maps using `{getdata}`, `{maplayer}`, and `{mapboxapi}`
+
+```{r}
+library(getdata)
+library(maplayer)
+```
+
+----
+
+Downloading data:
+
+```{r}
+dc_wards <- get_location(
+  "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Demographic_WebMercator/MapServer/39"
+)
+
+dc_wards
+```
+
+----
+
+Subetting data:
+
+```{r}
+ward_5 <- get_location(
+  dc_wards,
+  name = "Ward 5",
+  name_col = "NAMELSAD"
+)
+
+ward_5
+```
+
+----
+
+Map making functions:
+
+```{r}
+make_mapbox_map(
+  dc_wards,
+  style_url = "mapbox://styles/mapbox/navigation-day-v1",
+  asp = 1,
+  expand = FALSE,
+  color = NA
+)
+```
+
+```{r}
+ward_5_map <- make_mapbox_map(
+  ward_5,
+  style_url = "mapbox://styles/mapbox/navigation-day-v1",
+  asp = 1,
+  expand = FALSE,
+  color = NA
+)
+
+ward_5_map
+```
+
+----
+
+Inset maps:
+
+```{r}
+layer_inset(
+  map = ward_5_map,
+  inset = layer_location_context(
+    context = dc_wards,
+    location = ward_5,
+    basemap = TRUE
+  )
+)
+```
+
+----
+
+Downloading data from OpenStreetMap:
+
+```{r}
+ward_5_schools <- get_osm_data(
+    ward_5,
+    key = "building",
+    value = "school",
+    geometry = "polygon"
+    )
+```
+
+----
+
+Icon maps:
+
+```{r}
+ward_5_map +
+  layer_icon(
+    ward_5_schools,
+    icon = "school",
+    source = "openstreetmap/map-icons",
+    size = 3
+  )
+```
+
