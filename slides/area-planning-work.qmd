@@ -5,6 +5,8 @@ format: revealjs
 slide-level: 3
 code-link: true
 scrollable: true
+execute: 
+  echo: true
 ---
 
 # About
@@ -13,142 +15,152 @@ scrollable: true
 
 ## What packages am I using?
 
-My data analysis and mapping work depends on a tall stack of open-source packages especially from the `{tidyverse}` along with the [rOpenSci]() and rspatial communities. 
+My data analysis and mapping work depends on a tall stack of open-source packages especially from the `{tidyverse}` along with the [rOpenSci]() and rspatial communities.
 
 I have a lot of favorite R packages across a few different categories:
 
-- development
-- programming
-- visualization
-- data management
+-   package development
+-   programming
+-   visualization
+-   data management
 
-### Packages I use for development
+### Packages I use for package development
 
-- `{usethis}`
-- `{devtools}`
-- `{sinew}`
-- `{testthat}`
-- `{pkgdown}`
+-   `{usethis}`
+-   `{devtools}`
+-   `{sinew}`
+-   `{testthat}`
+-   `{pkgdown}`
 
 ### Packages I use for programming
 
-- `{sf}`
-- `{dplyr}` (and `{vctrs}`)
-- `{rlang}`
-- `{cli}`
-- `{httr2}`
+-   `{sf}`
+-   `{dplyr}` (and `{vctrs}`)
+-   `{rlang}`
+-   `{cli}`
+-   `{httr2}`
 
 ### Packages I use for visualization
 
-- [mapboxapi](https://walker-data.com/mapboxapi/)
-- `{ggplot2}` (with Adobe Illustrator sometimes)
-- `{mapview}`
-- [feltr](https://elipousson.github.io/feltr/)* (with Felt)
-- `{gt}`
+-   [mapboxapi](https://walker-data.com/mapboxapi/)
+-   `{ggplot2}` (with Adobe Illustrator sometimes)
+-   `{mapview}`
+-   [feltr](https://elipousson.github.io/feltr/)\* (with Felt)
+-   `{gt}`
 
 ### Packages I use for data management
 
-- `{osmdata}` (with OpenStreetMap)
-- `{rairtable}` [development version](https://github.com/matthewjrogers/rairtable/tree/dev)* (with Airtable)
-- `{googlesheets4}` (with Google Sheets)
-- `{officer}` (with Microsoft Word)
+-   `{osmdata}` (with OpenStreetMap)
+-   `{rairtable}` [development version](https://github.com/matthewjrogers/rairtable/tree/dev)\* (with Airtable)
+-   `{googlesheets4}` (with Google Sheets)
+-   `{officer}` (with Microsoft Word)
 
 ## When did I start building packages?
 
-- June 2019: Started learning R
-- Oct. 2020: Started `{mapbaltimore}` after a webinar on working with the `{mapboxapi}` package
-- Dec. 2020: Started contributing to open-source packages, `{FlickrAPI}`, `{esri2sf}`, and `{mapboxapi}`
-- November 2021: `{crashapi}` for accessing the National Highway Traffic Safety Administration (NHTSA) Fatality Analysis Reporting System (FARS) API
+::: notes
+-   June 2019: Started learning R
+-   Oct. 2020: Started `{mapbaltimore}` after a webinar on working with the `{mapboxapi}` package
+-   Dec. 2020: Started contributing to open-source packages, `{FlickrAPI}`, `{esri2sf}`, and `{mapboxapi}`
+-   November 2021: `{crashapi}` for accessing the National Highway Traffic Safety Administration (NHTSA) Fatality Analysis Reporting System (FARS) API
+:::
 
 ## What types of packages am I working on?
 
-- local data packages
-- data access packages
-- analysis and visualization packages
+-   local data packages
+-   data access packages
+-   analysis and visualization packages
 
 ## How did I get to this current approach?
 
-Data packages -> Utility packages -> Visualization packages
+Data packages 👉 Utility packages 👉 Visualization packages
 
-----
+:::: {.columns}
 
+::: {.column width='25%'}
 ![mapbaltimore](https://elipousson.github.io/mapbaltimore/logo.png)
+:::
 
-----
-
+::: {.column width='25%'}
 ![sfext](https://elipousson.github.io/sfext/logo.png)
+:::
 
-----
+::: {.column width='25%'}
+![maplayer](https://elipousson.github.io/getdata/logo.png)
+:::
 
-![getdata](https://elipousson.github.io/getdata/logo.png)
+::: {.column width='25%'}
+![maplayer](https://elipousson.github.io/maplayer/logo.png)
+:::
 
-----
+::::
 
 ::: notes
-
 Initially:
 
-- 2021?: Split `{overedge}` from `{mapbaltimore}`
-- Split:
-- June 2022: Split `{overedge}` into a few smaller packages: `{sfext}`, `{getdata}`, and `{maplayer}`
-- `{streetmixr}` for working with the Street Mix API
-- January 2023: `{officerExtras}` for extending the `{officer}` package (and working with tables and heading in Microsoft Word)
-- May 2023: `{feltr}` for working with the Felt API (Felt is a new, highly recommend online mapping application)
+-   2021?: Split `{overedge}` from `{mapbaltimore}`
+-   Split:
+-   June 2022: Split `{overedge}` into a few smaller packages: `{sfext}`, `{getdata}`, and `{maplayer}`
+-   `{streetmixr}` for working with the Street Mix API
+-   January 2023: `{officerExtras}` for extending the `{officer}` package (and working with tables and heading in Microsoft Word)
+-   May 2023: `{feltr}` for working with the Felt API (Felt is a new, highly recommend online mapping application)
 
 More recently:
 
-- July 2023: `{getACS}` for downloading `{tidycensus}` data, adding supplementary metadata, and making plots and tables
-- September 2023: `{sharepointr}` for reading and writing files and lists from SharePoint
-
+-   July 2023: `{getACS}` for downloading `{tidycensus}` data, adding supplementary metadata, and making plots and tables
+-   September 2023: `{sharepointr}` for reading and writing files and lists from SharePoint
 :::
 
 ## What are some local data projects am I working on?
 
 A few packages:
 
-- `{bcpss}`: Tidy survey, program, and zone data from and about Baltimore City Public Schools. 
-- `{marylandedu}`: Tidy enrollment and demographic data from Maryland State Department of Education.
-- `{baltimorecensus}`: Accessible U.S. Census geographies.
-- `{baltimoremls}`: Utility functions for Bright MLS sales data.
+-   `{bcpss}`: Tidy survey, program, and zone data from and about Baltimore City Public Schools.
+-   `{marylandedu}`: Tidy enrollment and demographic data from Maryland State Department of Education.
+-   `{baltimorecensus}`: Accessible U.S. Census geographies.
+-   `{baltimoremls}`: Utility functions for Bright MLS sales data.
 
 ## What are some local data projects am I working on?
 
 A few data analyses (all WIP):
 
-- bcpsstransportation*
-- baltimorecrash*
-- [baltimoretaxsale](https://github.com/elipousson/baltimoretaxsale)
+-   bcpsstransportation\*
+-   baltimorecrash\*
+-   [baltimoretaxsale](https://github.com/elipousson/baltimoretaxsale)
 
 ## What am I hoping to try next?
 
-- `{targets}`
-- `{rdeck}`
-- `{arcgislayers}`
+I'm still learning new approaches all the time. Here are a few packages I'm excited to learn:
+
+-   `{targets}`
+-   `{rdeck}`
+-   `{arcgislayers}`
 
 # Applications of R in Planning
+
+---
 
 ![John Ruhrah EMS INSPIRE Plan](images/2023-06-08_john-ruhrah-ems_inspire-plan_cover.jpg)
 
 ## All the little things
 
-- Maps
-- Tables
-- Graphics
-- Writing
+-   Maps
+-   Tables
+-   Graphics
+-   Writing
 
 ## Making the little things takes a lot of work
 
-- Data import and tidying
-- Data transformation and analysis
-- Managing text
-- Managing multiple output formats
+-   Data import and tidying
+-   Data transformation and analysis
+-   Managing text
+-   Managing multiple output formats
 
-## Example: Tables with demographic data using `{getACS}`
+## Building demographic data tables with `{gt}` and `{getACS}`
 
-- What do you do in advance?
-- What do you do as needed?
+-   What do you do in advance?
+-   What do you do as needed?
 
-## Setup
+### Setup
 
 ```{r}
 # pak::pkg_install("elipousson/getACS")
@@ -156,14 +168,14 @@ library(getACS)
 library(tidyverse)
 ```
 
-## First steps
+### First steps
 
-- Get data
-- Combine with metadata
-- Recalculate variables
-- Use areal interpolation as needed
+-   Get data
+-   Combine with metadata
+-   Recalculate variables
+-   Use areal interpolation as needed
 
----
+------------------------------------------------------------------------
 
 Using getACS to get data, combine with metadata, and recalculate estimates as a share of the denominator:
 
@@ -183,11 +195,11 @@ dc_acs <- delmarva_acs[[2]]
 dc_acs
 ```
 
-## Next steps
+### Next steps
 
-- Subset data to area
-- Recode values if needed
-- Create table or visualization
+-   Subset data to area
+-   Recode values if needed
+-   Create table or visualization
 
 ```{r}
 commute_acs_tbl <- dc_acs |> 
@@ -203,22 +215,22 @@ commute_acs_tbl <- dc_acs |>
   )
 ```
 
-----
+------------------------------------------------------------------------
 
 ```{r}
 commute_acs_tbl
 ```
 
-## Example: Maps using `{getdata}`, `{maplayer}`, and `{mapboxapi}`
+## Map-making with `{getdata}`, `{maplayer}`, and `{mapboxapi}`
 
 ```{r}
 library(getdata)
 library(maplayer)
 ```
 
-----
+------------------------------------------------------------------------
 
-Downloading data:
+### Downloading data
 
 ```{r}
 dc_wards <- get_location(
@@ -228,9 +240,9 @@ dc_wards <- get_location(
 dc_wards
 ```
 
-----
+------------------------------------------------------------------------
 
-Subetting data:
+### Subsetting data
 
 ```{r}
 ward_5 <- get_location(
@@ -242,9 +254,9 @@ ward_5 <- get_location(
 ward_5
 ```
 
-----
+------------------------------------------------------------------------
 
-Map making functions:
+### Make a basemap
 
 ```{r}
 make_mapbox_map(
@@ -255,6 +267,8 @@ make_mapbox_map(
   color = NA
 )
 ```
+
+### Make a basemap
 
 ```{r}
 ward_5_map <- make_mapbox_map(
@@ -268,9 +282,7 @@ ward_5_map <- make_mapbox_map(
 ward_5_map
 ```
 
-----
-
-Inset maps:
+### Add an inset map
 
 ```{r}
 layer_inset(
@@ -283,9 +295,9 @@ layer_inset(
 )
 ```
 
-----
+------------------------------------------------------------------------
 
-Downloading data from OpenStreetMap:
+### Get more area data
 
 ```{r}
 ward_5_schools <- get_osm_data(
@@ -296,9 +308,9 @@ ward_5_schools <- get_osm_data(
     )
 ```
 
-----
+------------------------------------------------------------------------
 
-Icon maps:
+### Add icon markers to a map
 
 ```{r}
 ward_5_map +
@@ -309,4 +321,3 @@ ward_5_map +
     size = 3
   )
 ```
-

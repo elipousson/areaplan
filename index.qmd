@@ -4,12 +4,16 @@ This site collects material related to my area planning work in R.
 
 -   [Area Planning Work in R](//slides/area-planning-work.html) - 2023 September 27
 
-## Related work
+# Related work
 
 ### Presentations
 
 -   [Mapping spatial data with R, ggplot2, and more](https://elipousson.github.io/mapping-r-ggplot2/mapping-introduction.html) - 2023 May 9
 -   [Using R as your GIS](https://elipousson.github.io/presentation-tugis2023): Applying R to community planning and working with spatial data - 2023 August 2
+
+## Packages
+
+This is a list of packages that are part of the workflow described in this guide or packages developed as part of related work.
 
 ### General packages
 
@@ -17,16 +21,24 @@ This site collects material related to my area planning work in R.
 - [getdata](https://elipousson.github.io/getdata)
 - [maplayer](https://elipousson.github.io/maplayer)
 
-## Local data packages
+### Local data packages
 
 - [mapbaltimore](https://elipousson.github.io/mapbaltimore)
 - [bcpss](https://elipousson.github.io/bcpss)
 - [mapmaryland](https://elipousson.github.io/mapmaryland)
 - [marylandedu](https://elipousson.github.io/marylandedu)
 
-## Planning-related packages
+### Planning and mapping-related packages
 
+- [streetmixr](https://elipousson.github.io/feltr)
 - [crashapi](https://elipousson.github.io/crashapi)
 - [getACS](https://elipousson.github.io/crashapi)
 - [feltr](https://elipousson.github.io/feltr)
+- [bingmapr](https://elipousson.github.io/feltr)
 
+### Utility packages
+
+- [filenamr](https://elipousson.github.io/filenamr)
+- [papersize](https://elipousson.github.io/papersize)
+- [sharepointr](https://elipousson.github.io/sharepointr)
+- [officerExtras](https://elipousson.github.io/officerExtras)

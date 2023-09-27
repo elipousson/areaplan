@@ -3,6 +3,7 @@ project:
 
 execute:
   freeze: auto
+  echo: true
 
 book:
   title: "Area Planning Work with R"

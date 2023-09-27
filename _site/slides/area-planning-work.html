@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
 <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
 <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -344,11 +409,11 @@ Eli Pousson
 <p>My data analysis and mapping work depends on a tall stack of open-source packages especially from the <a href="https://tidyverse.tidyverse.org">tidyverse</a> along with the <a href="">rOpenSci</a> and rspatial communities.</p>
 <p>I have a lot of favorite R packages across a few different categories:</p>
 <ul>
-<li>development</li>
+<li>package development</li>
 <li>programming</li>
 <li>visualization</li>
 <li>data management</li>
-</ul></section><section id="packages-i-use-for-development" class="slide level3"><h3>Packages I use for development</h3>
+</ul></section><section id="packages-i-use-for-package-development" class="slide level3"><h3>Packages I use for package development</h3>
 <ul>
 <li><a href="https://usethis.r-lib.org">usethis</a></li>
 <li><a href="https://devtools.r-lib.org/">devtools</a></li>
@@ -365,87 +430,146 @@ Eli Pousson
 <li><a href="https://httr2.r-lib.org">httr2</a></li>
 </ul></section><section id="packages-i-use-for-visualization" class="slide level3"><h3>Packages I use for visualization</h3>
 <ul>
-<li><code>{mapboxapi}</code></li>
+<li><a href="https://walker-data.com/mapboxapi/">mapboxapi</a></li>
 <li>
 <a href="https://ggplot2.tidyverse.org">ggplot2</a> (with Adobe Illustrator sometimes)</li>
 <li><a href="https://github.com/r-spatial/mapview">mapview</a></li>
 <li>
-<a href="https://github.com/elipousson/feltr/">feltr</a> (with Felt)</li>
+<a href="https://elipousson.github.io/feltr/">feltr</a>* (with Felt)</li>
 <li><a href="https://gt.rstudio.com/">gt</a></li>
 </ul></section><section id="packages-i-use-for-data-management" class="slide level3"><h3>Packages I use for data management</h3>
 <ul>
 <li>
 <a href="https://docs.ropensci.org/osmdata/">osmdata</a> (with OpenStreetMap)</li>
 <li>
-<a href="https://matthewjrogers.github.io/rairtable/">rairtable</a> (with Airtable)</li>
+<a href="https://matthewjrogers.github.io/rairtable/">rairtable</a> <a href="https://github.com/matthewjrogers/rairtable/tree/dev">development version</a>* (with Airtable)</li>
 <li>
 <a href="https://googlesheets4.tidyverse.org">googlesheets4</a> (with Google Sheets)</li>
 <li>
 <a href="https://ardata-fr.github.io/officeverse/">officer</a> (with Microsoft Word)</li>
 </ul></section><section id="when-did-i-start-building-packages" class="title-slide slide level2 center"><h2>When did I start building packages?</h2>
-<ul>
+<aside class="notes"><ul>
 <li>June 2019: Started learning R</li>
 <li>Oct.&nbsp;2020: Started <a href="https://github.com/elipousson/mapbaltimore">mapbaltimore</a> after a webinar on working with the <code>{mapboxapi}</code> package</li>
 <li>Dec.&nbsp;2020: Started contributing to open-source packages, <code>{FlickrAPI}</code>, <a href="https://github.com/elipousson/esri2sf/">esri2sf</a>, and <code>{mapboxapi}</code>
 </li>
 <li>November 2021: <code>{crashapi}</code> for accessing the National Highway Traffic Safety Administration (NHTSA) Fatality Analysis Reporting System (FARS) API</li>
-</ul></section><section id="what-types-of-packages-am-i-working-on" class="title-slide slide level2 center"><h2>What types of packages am I working on?</h2>
+</ul><style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="what-types-of-packages-am-i-working-on" class="title-slide slide level2 center"><h2>What types of packages am I working on?</h2>
 <ul>
 <li>local data packages</li>
 <li>data access packages</li>
 <li>analysis and visualization packages</li>
 </ul></section><section id="how-did-i-get-to-this-current-approach" class="title-slide slide level2 center"><h2>How did I get to this current approach?</h2>
+<p>Data packages 👉 Utility packages 👉 Visualization packages</p>
+<div class="columns">
+<div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="https://elipousson.github.io/mapbaltimore/logo.png"></p>
+<figcaption>mapbaltimore</figcaption></figure>
+</div>
+</div><div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="https://elipousson.github.io/sfext/logo.png"></p>
+<figcaption>sfext</figcaption></figure>
+</div>
+</div><div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="https://elipousson.github.io/getdata/logo.png"></p>
+<figcaption>maplayer</figcaption></figure>
+</div>
+</div><div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="https://elipousson.github.io/maplayer/logo.png"></p>
+<figcaption>maplayer</figcaption></figure>
+</div>
+</div>
+</div>
+<aside class="notes"><p>Initially:</p>
 <ul>
+<li>2021?: Split <code>{overedge}</code> from <a href="https://github.com/elipousson/mapbaltimore">mapbaltimore</a>
+</li>
+<li>Split:</li>
 <li>June 2022: Split <code>{overedge}</code> into a few smaller packages: <a href="https://github.com/elipousson/sfext">sfext</a>, <a href="https://github.com/elipousson/getdata">getdata</a>, and <a href="https://github.com/elipousson/maplayer">maplayer</a>
 </li>
 <li>
 <code>{streetmixr}</code> for working with the Street Mix API</li>
 <li>January 2023: <a href="https://github.com/elipousson/officerExtras">officerExtras</a> for extending the <a href="https://ardata-fr.github.io/officeverse/">officer</a> package (and working with tables and heading in Microsoft Word)</li>
 <li>May 2023: <a href="https://github.com/elipousson/feltr/">feltr</a> for working with the Felt API (Felt is a new, highly recommend online mapping application)</li>
-</ul></section><section id="how-did-i-get-to-this-current-approach-1" class="title-slide slide level2 center"><h2>How did I get to this current approach?</h2>
+</ul>
+<p>More recently:</p>
 <ul>
 <li>July 2023: <a href="https://elipousson.github.io/getACS/">getACS</a> for downloading <a href="https://walker-data.com/tidycensus/">tidycensus</a> data, adding supplementary metadata, and making plots and tables</li>
 <li>September 2023: <a href="https://github.com/elipousson/sharepointr">sharepointr</a> for reading and writing files and lists from SharePoint</li>
-</ul></section><section id="what-are-some-local-data-projects-am-i-working-on" class="title-slide slide level2 center"><h2>What are some local data projects am I working on?</h2>
+</ul><style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="what-are-some-local-data-projects-am-i-working-on" class="title-slide slide level2 center"><h2>What are some local data projects am I working on?</h2>
 <p>A few packages:</p>
 <ul>
-<li><a href="https://github.com/elipousson/bcpss">bcpss</a></li>
-<li><a href="https://github.com/elipousson/marylandedu">marylandedu</a></li>
-<li><a href="https://github.com/elipousson/baltimorecensus">baltimorecensus</a></li>
-<li><code>{baltimoremls}</code></li>
+<li>
+<a href="https://github.com/elipousson/bcpss">bcpss</a>: Tidy survey, program, and zone data from and about Baltimore City Public Schools.</li>
+<li>
+<a href="https://github.com/elipousson/marylandedu">marylandedu</a>: Tidy enrollment and demographic data from Maryland State Department of Education.</li>
+<li>
+<a href="https://github.com/elipousson/baltimorecensus">baltimorecensus</a>: Accessible U.S. Census geographies.</li>
+<li>
+<code>{baltimoremls}</code>: Utility functions for Bright MLS sales data.</li>
 </ul></section><section id="what-are-some-local-data-projects-am-i-working-on-1" class="title-slide slide level2 center"><h2>What are some local data projects am I working on?</h2>
 <p>A few data analyses (all WIP):</p>
 <ul>
 <li>bcpsstransportation*</li>
 <li>baltimorecrash*</li>
-<li>baltimoretaxsale</li>
+<li><a href="https://github.com/elipousson/baltimoretaxsale">baltimoretaxsale</a></li>
 </ul></section><section id="what-am-i-hoping-to-try-next" class="title-slide slide level2 center"><h2>What am I hoping to try next?</h2>
+<p>I’m still learning new approaches all the time. Here are a few packages I’m excited to learn:</p>
 <ul>
 <li><a href="https://docs.ropensci.org/targets/">targets</a></li>
 <li><a href="https://qfes.github.io/rdeck">rdeck</a></li>
 <li><code>{arcgislayers}</code></li>
-</ul></section></section><section><section id="planning-with-r" class="title-slide slide level1 center"><h1>Planning with R</h1>
+</ul></section></section><section><section id="applications-of-r-in-planning" class="title-slide slide level1 center"><h1>Applications of R in Planning</h1>
 
-</section><section id="all-the-little-things" class="title-slide slide level2 center"><h2>All the little things</h2>
+</section><section class="slide level3">
+<img data-src="images/2023-06-08_john-ruhrah-ems_inspire-plan_cover.jpg" class="r-stretch quarto-figure-center"><p class="caption">John Ruhrah EMS INSPIRE Plan</p></section><section id="all-the-little-things" class="title-slide slide level2 center"><h2>All the little things</h2>
 <ul>
+<li>Maps</li>
 <li>Tables</li>
 <li>Graphics</li>
-<li>Maps</li>
-<li>Call-outs</li>
+<li>Writing</li>
 </ul></section><section id="making-the-little-things-takes-a-lot-of-work" class="title-slide slide level2 center"><h2>Making the little things takes a lot of work</h2>
 <ul>
-<li>Data import</li>
-<li>Data transformation</li>
+<li>Data import and tidying</li>
+<li>Data transformation and analysis</li>
 <li>Managing text</li>
 <li>Managing multiple output formats</li>
-</ul></section><section id="example-tables-with-demographic-data-using-getacs" class="title-slide slide level2 center"><h2>Example: Tables with demographic data using <code>{getACS}</code>
+</ul></section><section id="building-demographic-data-tables-with-gt-and-getacs" class="title-slide slide level2 center"><h2>Building demographic data tables with <code>{gt}</code> and <code>{getACS}</code>
 </h2>
 <ul>
 <li>What do you do in advance?</li>
 <li>What do you do as needed?</li>
-</ul></section><section id="setup" class="title-slide slide level2 center"><h2>Setup</h2>
-
-</section><section id="first-steps" class="title-slide slide level2 center"><h2>First steps</h2>
+</ul></section><section id="setup" class="slide level3"><h3>Setup</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># pak::pkg_install("elipousson/getACS")</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(getACS)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="first-steps" class="slide level3"><h3>First steps</h3>
 <ul>
 <li>Get data</li>
 <li>Combine with metadata</li>
@@ -453,6 +577,19 @@ Eli Pousson
 <li>Use areal interpolation as needed</li>
 </ul></section><section class="slide level3"><p>Using getACS to get data, combine with metadata, and recalculate estimates as a share of the denominator:</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>delmarva_acs <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">c</span>(<span class="st">"MD"</span>, <span class="st">"DC"</span>, <span class="st">"VA"</span>),</span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="sc">~</span> <span class="fu">get_acs_geographies</span>(</span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="at">geography =</span> <span class="fu">c</span>(<span class="st">"county"</span>, <span class="st">"state"</span>),</span>
+<span id="cb2-5"><a href="#cb2-5"></a>  <span class="at">table =</span> <span class="st">"B08134"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6"></a>  <span class="at">state =</span> .x,</span>
+<span id="cb2-7"><a href="#cb2-7"></a>  <span class="at">quiet =</span> <span class="cn">TRUE</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a>  )</span>
+<span id="cb2-9"><a href="#cb2-9"></a>)</span>
+<span id="cb2-10"><a href="#cb2-10"></a></span>
+<span id="cb2-11"><a href="#cb2-11"></a>dc_acs <span class="ot">&lt;-</span> delmarva_acs[[<span class="dv">2</span>]]</span>
+<span id="cb2-12"><a href="#cb2-12"></a></span>
+<span id="cb2-13"><a href="#cb2-13"></a>dc_acs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 240 × 24
    GEOID NAME  variable column_id table_id estimate   moe perc_estimate perc_moe
@@ -475,30 +612,45 @@ Eli Pousson
 #   denominator_column_title &lt;chr&gt;, geography &lt;chr&gt;, state &lt;chr&gt;</code></pre>
 </div>
 </div>
-</section><section id="next-steps" class="title-slide slide level2 center"><h2>Next steps</h2>
+</section><section id="next-steps" class="slide level3"><h3>Next steps</h3>
 <ul>
 <li>Subset data to area</li>
 <li>Recode values if needed</li>
 <li>Create table or visualization</li>
-</ul></section><section class="slide level3"><div class="cell">
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>commute_acs_tbl <span class="ot">&lt;-</span> dc_acs <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">filter_acs</span>(</span>
+<span id="cb4-3"><a href="#cb4-3"></a>    indent <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb4-4"><a href="#cb4-4"></a>    line_number <span class="sc">&gt;=</span> <span class="dv">11</span>,</span>
+<span id="cb4-5"><a href="#cb4-5"></a>    <span class="at">geography =</span> <span class="st">"state"</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb4-7"><a href="#cb4-7"></a>  <span class="fu">select_acs</span>(<span class="at">.name_col =</span> <span class="cn">NULL</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-8"><a href="#cb4-8"></a>  <span class="fu">gt_acs</span>(</span>
+<span id="cb4-9"><a href="#cb4-9"></a>    <span class="at">column_title_label =</span> <span class="st">"Mode of transportation"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10"></a>    <span class="at">table =</span> dc_acs<span class="sc">$</span>table_id</span>
+<span id="cb4-11"><a href="#cb4-11"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section class="slide level3"><div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>commute_acs_tbl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="spicpqlwkz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#spicpqlwkz table {
+<div id="nguoadvomk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nguoadvomk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#spicpqlwkz thead, #spicpqlwkz tbody, #spicpqlwkz tfoot, #spicpqlwkz tr, #spicpqlwkz td, #spicpqlwkz th {
+#nguoadvomk thead, #nguoadvomk tbody, #nguoadvomk tfoot, #nguoadvomk tr, #nguoadvomk td, #nguoadvomk th {
   border-style: none;
 }
 
-#spicpqlwkz p {
+#nguoadvomk p {
   margin: 0;
   padding: 0;
 }
 
-#spicpqlwkz .gt_table {
+#nguoadvomk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -524,12 +676,12 @@ Eli Pousson
   border-left-color: #D3D3D3;
 }
 
-#spicpqlwkz .gt_caption {
+#nguoadvomk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#spicpqlwkz .gt_title {
+#nguoadvomk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -541,7 +693,7 @@ Eli Pousson
   border-bottom-width: 0;
 }
 
-#spicpqlwkz .gt_subtitle {
+#nguoadvomk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -553,7 +705,7 @@ Eli Pousson
   border-top-width: 0;
 }
 
-#spicpqlwkz .gt_heading {
+#nguoadvomk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -565,13 +717,13 @@ Eli Pousson
   border-right-color: #D3D3D3;
 }
 
-#spicpqlwkz .gt_bottom_border {
+#nguoadvomk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#spicpqlwkz .gt_col_headings {
+#nguoadvomk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -586,7 +738,7 @@ Eli Pousson
   border-right-color: #D3D3D3;
 }
 
-#spicpqlwkz .gt_col_heading {
+#nguoadvomk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -606,7 +758,7 @@ Eli Pousson
   overflow-x: hidden;
 }
 
-#spicpqlwkz .gt_column_spanner_outer {
+#nguoadvomk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -618,15 +770,15 @@ Eli Pousson
   padding-right: 4px;
 }
 
-#spicpqlwkz .gt_column_spanner_outer:first-child {
+#nguoadvomk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#spicpqlwkz .gt_column_spanner_outer:last-child {
+#nguoadvomk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#spicpqlwkz .gt_column_spanner {
+#nguoadvomk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -638,11 +790,11 @@ Eli Pousson
   width: 100%;
 }
 
-#spicpqlwkz .gt_spanner_row {
+#nguoadvomk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#spicpqlwkz .gt_group_heading {
+#nguoadvomk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -668,7 +820,7 @@ Eli Pousson
   text-align: left;
 }
 
-#spicpqlwkz .gt_empty_group_heading {
+#nguoadvomk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -683,15 +835,15 @@ Eli Pousson
   vertical-align: middle;
 }
 
-#spicpqlwkz .gt_from_md > :first-child {
+#nguoadvomk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#spicpqlwkz .gt_from_md > :last-child {
+#nguoadvomk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#spicpqlwkz .gt_row {
+#nguoadvomk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -710,7 +862,7 @@ Eli Pousson
   overflow-x: hidden;
 }
 
-#spicpqlwkz .gt_stub {
+#nguoadvomk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -723,7 +875,7 @@ Eli Pousson
   padding-right: 5px;
 }
 
-#spicpqlwkz .gt_stub_row_group {
+#nguoadvomk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -737,15 +889,15 @@ Eli Pousson
   vertical-align: top;
 }
 
-#spicpqlwkz .gt_row_group_first td {
+#nguoadvomk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#spicpqlwkz .gt_row_group_first th {
+#nguoadvomk .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#spicpqlwkz .gt_summary_row {
+#nguoadvomk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -755,16 +907,16 @@ Eli Pousson
   padding-right: 5px;
 }
 
-#spicpqlwkz .gt_first_summary_row {
+#nguoadvomk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#spicpqlwkz .gt_first_summary_row.thick {
+#nguoadvomk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#spicpqlwkz .gt_last_summary_row {
+#nguoadvomk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -774,7 +926,7 @@ Eli Pousson
   border-bottom-color: #D3D3D3;
 }
 
-#spicpqlwkz .gt_grand_summary_row {
+#nguoadvomk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -784,7 +936,7 @@ Eli Pousson
   padding-right: 5px;
 }
 
-#spicpqlwkz .gt_first_grand_summary_row {
+#nguoadvomk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -794,7 +946,7 @@ Eli Pousson
   border-top-color: #D3D3D3;
 }
 
-#spicpqlwkz .gt_last_grand_summary_row_top {
+#nguoadvomk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -804,11 +956,11 @@ Eli Pousson
   border-bottom-color: #D3D3D3;
 }
 
-#spicpqlwkz .gt_striped {
+#nguoadvomk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#spicpqlwkz .gt_table_body {
+#nguoadvomk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -817,7 +969,7 @@ Eli Pousson
   border-bottom-color: #D3D3D3;
 }
 
-#spicpqlwkz .gt_footnotes {
+#nguoadvomk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -831,7 +983,7 @@ Eli Pousson
   border-right-color: #D3D3D3;
 }
 
-#spicpqlwkz .gt_footnote {
+#nguoadvomk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -840,7 +992,7 @@ Eli Pousson
   padding-right: 5px;
 }
 
-#spicpqlwkz .gt_sourcenotes {
+#nguoadvomk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -854,7 +1006,7 @@ Eli Pousson
   border-right-color: #D3D3D3;
 }
 
-#spicpqlwkz .gt_sourcenote {
+#nguoadvomk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -862,63 +1014,63 @@ Eli Pousson
   padding-right: 5px;
 }
 
-#spicpqlwkz .gt_left {
+#nguoadvomk .gt_left {
   text-align: left;
 }
 
-#spicpqlwkz .gt_center {
+#nguoadvomk .gt_center {
   text-align: center;
 }
 
-#spicpqlwkz .gt_right {
+#nguoadvomk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#spicpqlwkz .gt_font_normal {
+#nguoadvomk .gt_font_normal {
   font-weight: normal;
 }
 
-#spicpqlwkz .gt_font_bold {
+#nguoadvomk .gt_font_bold {
   font-weight: bold;
 }
 
-#spicpqlwkz .gt_font_italic {
+#nguoadvomk .gt_font_italic {
   font-style: italic;
 }
 
-#spicpqlwkz .gt_super {
+#nguoadvomk .gt_super {
   font-size: 65%;
 }
 
-#spicpqlwkz .gt_footnote_marks {
+#nguoadvomk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#spicpqlwkz .gt_asterisk {
+#nguoadvomk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#spicpqlwkz .gt_indent_1 {
+#nguoadvomk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#spicpqlwkz .gt_indent_2 {
+#nguoadvomk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#spicpqlwkz .gt_indent_3 {
+#nguoadvomk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#spicpqlwkz .gt_indent_4 {
+#nguoadvomk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#spicpqlwkz .gt_indent_5 {
+#nguoadvomk .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -957,8 +1109,278 @@ Eli Pousson
 </div>
 </div>
 </div>
+</section><section id="map-making-with-getdata-maplayer-and-mapboxapi" class="title-slide slide level2 center"><h2>Map-making with <code>{getdata}</code>, <code>{maplayer}</code>, and <code>{mapboxapi}</code>
+</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">library</span>(getdata)</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">library</span>(maplayer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="downloading-data" class="slide level3"><h3>Downloading data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>dc_wards <span class="ot">&lt;-</span> <span class="fu">get_location</span>(</span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="st">"https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Demographic_WebMercator/MapServer/39"</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>)</span>
+<span id="cb7-4"><a href="#cb7-4"></a></span>
+<span id="cb7-5"><a href="#cb7-5"></a>dc_wards</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 8 features and 97 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -8584933 ymin: 4691871 xmax: -8561515 ymax: 4721078
+Projected CRS: WGS 84 / Pseudo-Mercator
+  OBJECTID GEOID NAMELSAD DP05_0001E DP05_0002E DP05_0003E DP05_0004E
+1        1 11001   Ward 1      82404      39512      42892       92.1
+2        2 11002   Ward 2      83925      40917      43008       95.1
+3        3 11003   Ward 3      82450      37996      44454       85.5
+4        4 11004   Ward 4      86085      41989      44096       95.2
+5        5 11005   Ward 5      89082      42795      46287       92.5
+6        6 11006   Ward 6      79161      38599      40562       95.2
+7        7 11007   Ward 7      91997      44239      47758       92.6
+8        8 11008   Ward 8      88050      39443      48607       81.1
+  DP05_0005E DP05_0006E DP05_0007E DP05_0008E DP05_0009E DP05_0010E DP05_0011E
+1       4653       3202       2731       3877       6330      26719      14746
+2       2845        999        950       7065      11558      24359      11797
+3       4085       4293       3281       5203       5328      14681      11903
+4       5654       6329       5129       3368       3474      13220      14759
+5       5783       4841       4250       4289       6126      18785      14205
+6       4216       2487       2163       2300       4955      25640      14534
+7       7591       6038       5528       5199       5616      16482      12459
+8       8131       6880       7417       5340       5924      15828      12395
+  DP05_0012E DP05_0013E DP05_0014E DP05_0015E DP05_0016E DP05_0017E DP05_0018E
+1       7881       3901       2563       3869       1383        549       32.5
+2       7047       3974       4032       5795       2779        725       32.3
+3      10122       4192       3923       7980       5322       2137       38.4
+4      11117       5448       4813       7706       3292       1776       39.0
+5      10408       4311       4596       6420       3330       1738       35.2
+6       8583       3599       2957       4688       2236        803       34.0
+7      10006       5152       5697       7102       3576       1551       34.7
+8       8437       4618       4638       5412       2050        980       31.0
+  DP05_0019E DP05_0020E DP05_0021E DP05_0022E DP05_0023E DP05_0024E DP05_0025E
+1      11854      71298      70550      66675       7139       5801      70550
+2       5303      79049      78622      68722      11239       9299      78622
+3      13305      70274      69145      64312      17904      15439      69145
+4      19523      68236      66562      64886      15700      12774      66562
+5      16637      73628      72445      68795      14527      11488      72445
+6      10113      70025      69048      67373       9432       7727      69048
+7      22400      71788      69597      67008      15478      12229      69597
+8      25887      64107      62163      59442      11252       8442      62163
+  DP05_0026E DP05_0027E DP05_0028E DP05_0029E DP05_0030E DP05_0031E DP05_0032E
+1      33692      36858       91.4       5801       2401       3400       70.6
+2      38682      39940       96.9       9299       4354       4945       88.0
+3      31240      37905       82.4      15439       6818       8621       79.1
+4      31677      34885       90.8      12774       5267       7507       70.2
+5      34620      37825       91.5      11488       4272       7216       59.2
+6      33185      35863       92.5       7727       3295       4432       74.3
+7      32312      37285       86.7      12229       4834       7395       65.4
+8      26809      35354       75.8       8442       3277       5165       63.4
+  DP05_0033E DP05_0034E DP05_0035E DP05_0036E DP05_0037E DP05_0038E DP05_0039E
+1      82404      76164       6240      76164      41431      21213        400
+2      83925      78218       5707      78218      58021       9417        432
+3      82450      77017       5433      77017      62358       7184         92
+4      86085      80071       6014      80071      25169      41998        243
+5      89082      84742       4340      84742      22839      54807        255
+6      79161      74657       4504      74657      51212      17663         95
+7      91997      88437       3560      88437       7192      78810        316
+8      88050      84991       3059      84991       8151      74017        151
+  DP05_0040E DP05_0041E DP05_0042E DP05_0043E DP05_0044E DP05_0045E DP05_0046E
+1          0          0          0          0       4670       1405        617
+2          0          0          0          0       7764       2087       2840
+3          0          0          0          0       5935       2148       1140
+4          0          0          0          0       1536        516        223
+5          0          0          0          0       2614        592        521
+6          0          0          0          0       4075        534       1700
+7          0          0          0          0        648         92        104
+8          0          0          0          0        746        127        128
+  DP05_0047E DP05_0048E DP05_0049E DP05_0050E DP05_0051E DP05_0052E DP05_0053E
+1        422        139        610        825        652         52         34
+2        318        337        989        350        843         91          8
+3        710        205        229        598        905         60         37
+4        147         47        146        202        255          0          0
+5        527         29        343        305        297         99         95
+6        381        174        684        272        330         26          0
+7         34         11        272         74         61         19          0
+8         68          0        275         23        125         12          1
+  DP05_0054E DP05_0055E DP05_0056E DP05_0057E DP05_0058E DP05_0059E DP05_0060E
+1          0          0         18       8398       6240        809        219
+2         29          0         54       2493       5707        690        246
+3         13          0         10       1388       5433        980        131
+4          0          0          0      11125       6014       1165        179
+5          4          0          0       4128       4340       1459        162
+6          0         12         14       1586       4504        987        214
+7          0          0         19       1452       3560       1006        104
+8          8          0          3       1914       3059       1143        149
+  DP05_0061E DP05_0062E DP05_0063E DP05_0064E DP05_0065E DP05_0066E DP05_0067E
+1       1267        417      82404      46690      23121       1418       6168
+2       1382         13      83925      63164      10758        969       9478
+3       1517         68      82450      67494       8692        538       7741
+4        447        340      86085      29685      45158       1609       2780
+5        624        123      89082      26324      57527        942       3810
+6       1192        112      79161      55272      19351        572       5773
+7        279        832      91997       9470      81375       1596       1104
+8        166        530      88050      10526      76253       1068       1132
+  DP05_0068E DP05_0069E DP05_0070E DP05_0071E DP05_0072E DP05_0073E DP05_0074E
+1         98      11575      82404      17017       2838       1082        462
+2        222       5619      83925      11251       2220        958        665
+3         83       3937      82450       8216       1288        788        693
+4        237      14080      86085      18628       1860        651        441
+5        318       5326      89082       8265       1876        666        183
+6         93       3013      79161       6332       1281        730        369
+7         55       2347      91997       3802        728        524        361
+8         99       2663      88050       3471       1011        804          8
+  DP05_0075E DP05_0076E DP05_0077E DP05_0078E DP05_0079E DP05_0080E DP05_0081E
+1      12635      65387      36338      20384        184       4598         52
+2       7408      72674      52548       9193         85       7598         91
+3       5447      74234      58064       6853         26       5841         36
+4      15676      67457      21216      41098         94       1536          0
+5       5540      80817      20645      54053        190       2579         95
+6       3952      72829      47824      17539         43       3999         14
+7       2189      88195       6543      77487        268        639          0
+8       1648      84579       7218      73109        113        732          9
+  DP05_0082E DP05_0083E DP05_0084E DP05_0085E DP05_0086E DP05_0087E DP05_0088E
+1        580       3251        480       2771      42860      61241      28734
+2        174       2985        973       2012      50324      69707      34477
+3        411       3003        347       2656      42476      62064      28229
+4        463       3050        441       2609      36284      57069      26590
+5        339       2916        199       2717      42066      67939      32150
+6        260       3150        497       2653      46550      65343      31454
+7        462       2796        180       2616      41318      67919      31367
+8        917       2481         38       2443      42428      61055      26163
+  DP05_0089E SHAPE.AREA SHAPE.LEN                    GIS_ID
+1      32507          0         0 ACS_Demographic_DC_Ward_1
+2      35230          0         0 ACS_Demographic_DC_Ward_2
+3      33835          0         0 ACS_Demographic_DC_Ward_3
+4      30479          0         0 ACS_Demographic_DC_Ward_4
+5      35789          0         0 ACS_Demographic_DC_Ward_5
+6      33889          0         0 ACS_Demographic_DC_Ward_6
+7      36552          0         0 ACS_Demographic_DC_Ward_7
+8      34892          0         0 ACS_Demographic_DC_Ward_8
+                              GEONAME                               GLOBALID
+1 Ward 1 (2022), District of Columbia {A8BDB2A5-BC64-4797-86A3-59D07CB339F9}
+2 Ward 2 (2022), District of Columbia {B76AA6F1-C20D-407A-A7B9-FCEF33CAE4BD}
+3 Ward 3 (2022), District of Columbia {70C2C87D-3384-4710-9566-8BBF1430957E}
+4 Ward 4 (2022), District of Columbia {EAEC242D-526F-4B40-9D0D-50AAFED0B154}
+5 Ward 5 (2022), District of Columbia {5A3FBA65-7076-40B5-A9F6-577FDA6434F0}
+6 Ward 6 (2022), District of Columbia {E785FE32-1537-4180-B638-E843085072B2}
+7 Ward 7 (2022), District of Columbia {C226EFA3-A1DD-47F9-B4AB-622E06A5C87D}
+8 Ward 8 (2022), District of Columbia {DED98CA0-3002-47B4-B538-D5197018ED3F}
+                           geoms
+1 MULTIPOLYGON (((-8577254 47...
+2 MULTIPOLYGON (((-8580711 47...
+3 MULTIPOLYGON (((-8584932 47...
+4 MULTIPOLYGON (((-8579577 47...
+5 MULTIPOLYGON (((-8573742 47...
+6 MULTIPOLYGON (((-8576466 47...
+7 MULTIPOLYGON (((-8569782 47...
+8 MULTIPOLYGON (((-8576945 46...</code></pre>
+</div>
+</div>
+</section><section id="subsetting-data" class="slide level3"><h3>Subsetting data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>ward_5 <span class="ot">&lt;-</span> <span class="fu">get_location</span>(</span>
+<span id="cb9-2"><a href="#cb9-2"></a>  dc_wards,</span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="at">name =</span> <span class="st">"Ward 5"</span>,</span>
+<span id="cb9-4"><a href="#cb9-4"></a>  <span class="at">name_col =</span> <span class="st">"NAMELSAD"</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>)</span>
+<span id="cb9-6"><a href="#cb9-6"></a></span>
+<span id="cb9-7"><a href="#cb9-7"></a>ward_5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 1 feature and 97 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -8573742 ymin: 4706949 xmax: -8565136 ymax: 4715554
+Projected CRS: WGS 84 / Pseudo-Mercator
+  OBJECTID GEOID NAMELSAD DP05_0001E DP05_0002E DP05_0003E DP05_0004E
+5        5 11005   Ward 5      89082      42795      46287       92.5
+  DP05_0005E DP05_0006E DP05_0007E DP05_0008E DP05_0009E DP05_0010E DP05_0011E
+5       5783       4841       4250       4289       6126      18785      14205
+  DP05_0012E DP05_0013E DP05_0014E DP05_0015E DP05_0016E DP05_0017E DP05_0018E
+5      10408       4311       4596       6420       3330       1738       35.2
+  DP05_0019E DP05_0020E DP05_0021E DP05_0022E DP05_0023E DP05_0024E DP05_0025E
+5      16637      73628      72445      68795      14527      11488      72445
+  DP05_0026E DP05_0027E DP05_0028E DP05_0029E DP05_0030E DP05_0031E DP05_0032E
+5      34620      37825       91.5      11488       4272       7216       59.2
+  DP05_0033E DP05_0034E DP05_0035E DP05_0036E DP05_0037E DP05_0038E DP05_0039E
+5      89082      84742       4340      84742      22839      54807        255
+  DP05_0040E DP05_0041E DP05_0042E DP05_0043E DP05_0044E DP05_0045E DP05_0046E
+5          0          0          0          0       2614        592        521
+  DP05_0047E DP05_0048E DP05_0049E DP05_0050E DP05_0051E DP05_0052E DP05_0053E
+5        527         29        343        305        297         99         95
+  DP05_0054E DP05_0055E DP05_0056E DP05_0057E DP05_0058E DP05_0059E DP05_0060E
+5          4          0          0       4128       4340       1459        162
+  DP05_0061E DP05_0062E DP05_0063E DP05_0064E DP05_0065E DP05_0066E DP05_0067E
+5        624        123      89082      26324      57527        942       3810
+  DP05_0068E DP05_0069E DP05_0070E DP05_0071E DP05_0072E DP05_0073E DP05_0074E
+5        318       5326      89082       8265       1876        666        183
+  DP05_0075E DP05_0076E DP05_0077E DP05_0078E DP05_0079E DP05_0080E DP05_0081E
+5       5540      80817      20645      54053        190       2579         95
+  DP05_0082E DP05_0083E DP05_0084E DP05_0085E DP05_0086E DP05_0087E DP05_0088E
+5        339       2916        199       2717      42066      67939      32150
+  DP05_0089E SHAPE.AREA SHAPE.LEN                    GIS_ID
+5      35789          0         0 ACS_Demographic_DC_Ward_5
+                              GEONAME                               GLOBALID
+5 Ward 5 (2022), District of Columbia {5A3FBA65-7076-40B5-A9F6-577FDA6434F0}
+                           geoms
+5 MULTIPOLYGON (((-8573742 47...</code></pre>
+</div>
+</div>
+</section><section id="make-a-basemap" class="slide level3"><h3>Make a basemap</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">make_mapbox_map</span>(</span>
+<span id="cb11-2"><a href="#cb11-2"></a>  dc_wards,</span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="at">style_url =</span> <span class="st">"mapbox://styles/mapbox/navigation-day-v1"</span>,</span>
+<span id="cb11-4"><a href="#cb11-4"></a>  <span class="at">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb11-5"><a href="#cb11-5"></a>  <span class="at">expand =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb11-6"><a href="#cb11-6"></a>  <span class="at">color =</span> <span class="cn">NA</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<div class="footer footer-default">
+</div>
+<img data-src="area-planning-work_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section><section id="make-a-basemap-1" class="slide level3"><h3>Make a basemap</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>ward_5_map <span class="ot">&lt;-</span> <span class="fu">make_mapbox_map</span>(</span>
+<span id="cb12-2"><a href="#cb12-2"></a>  ward_5,</span>
+<span id="cb12-3"><a href="#cb12-3"></a>  <span class="at">style_url =</span> <span class="st">"mapbox://styles/mapbox/navigation-day-v1"</span>,</span>
+<span id="cb12-4"><a href="#cb12-4"></a>  <span class="at">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb12-5"><a href="#cb12-5"></a>  <span class="at">expand =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb12-6"><a href="#cb12-6"></a>  <span class="at">color =</span> <span class="cn">NA</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a>)</span>
+<span id="cb12-8"><a href="#cb12-8"></a></span>
+<span id="cb12-9"><a href="#cb12-9"></a>ward_5_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="area-planning-work_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section><section id="add-an-inset-map" class="slide level3"><h3>Add an inset map</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">layer_inset</span>(</span>
+<span id="cb13-2"><a href="#cb13-2"></a>  <span class="at">map =</span> ward_5_map,</span>
+<span id="cb13-3"><a href="#cb13-3"></a>  <span class="at">inset =</span> <span class="fu">layer_location_context</span>(</span>
+<span id="cb13-4"><a href="#cb13-4"></a>    <span class="at">context =</span> dc_wards,</span>
+<span id="cb13-5"><a href="#cb13-5"></a>    <span class="at">location =</span> ward_5,</span>
+<span id="cb13-6"><a href="#cb13-6"></a>    <span class="at">basemap =</span> <span class="cn">TRUE</span></span>
+<span id="cb13-7"><a href="#cb13-7"></a>  )</span>
+<span id="cb13-8"><a href="#cb13-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="area-planning-work_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section><section id="get-more-area-data" class="slide level3"><h3>Get more area data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>ward_5_schools <span class="ot">&lt;-</span> <span class="fu">get_osm_data</span>(</span>
+<span id="cb14-2"><a href="#cb14-2"></a>    ward_5,</span>
+<span id="cb14-3"><a href="#cb14-3"></a>    <span class="at">key =</span> <span class="st">"building"</span>,</span>
+<span id="cb14-4"><a href="#cb14-4"></a>    <span class="at">value =</span> <span class="st">"school"</span>,</span>
+<span id="cb14-5"><a href="#cb14-5"></a>    <span class="at">geometry =</span> <span class="st">"polygon"</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="add-icon-markers-to-a-map" class="slide level3"><h3>Add icon markers to a map</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>ward_5_map <span class="sc">+</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>  <span class="fu">layer_icon</span>(</span>
+<span id="cb15-3"><a href="#cb15-3"></a>    ward_5_schools,</span>
+<span id="cb15-4"><a href="#cb15-4"></a>    <span class="at">icon =</span> <span class="st">"school"</span>,</span>
+<span id="cb15-5"><a href="#cb15-5"></a>    <span class="at">source =</span> <span class="st">"openstreetmap/map-icons"</span>,</span>
+<span id="cb15-6"><a href="#cb15-6"></a>    <span class="at">size =</span> <span class="dv">3</span></span>
+<span id="cb15-7"><a href="#cb15-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+
+<img data-src="area-planning-work_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"><div class="footer footer-default">
 
 </div>
 </section></section>
