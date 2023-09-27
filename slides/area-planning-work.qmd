@@ -40,16 +40,16 @@ I have a lot of favorite R packages across a few different categories:
 
 ### Packages I use for visualization
 
-- `{mapboxapi}`
+- [mapboxapi](https://walker-data.com/mapboxapi/)
 - `{ggplot2}` (with Adobe Illustrator sometimes)
 - `{mapview}`
-- `{feltr}` (with Felt)
+- [feltr](https://elipousson.github.io/feltr/)* (with Felt)
 - `{gt}`
 
 ### Packages I use for data management
 
 - `{osmdata}` (with OpenStreetMap)
-- `{rairtable}` (with Airtable)
+- `{rairtable}` [development version](https://github.com/matthewjrogers/rairtable/tree/dev)* (with Airtable)
 - `{googlesheets4}` (with Google Sheets)
 - `{officer}` (with Microsoft Word)
 
@@ -68,24 +68,48 @@ I have a lot of favorite R packages across a few different categories:
 
 ## How did I get to this current approach?
 
+Data packages -> Utility packages -> Visualization packages
+
+----
+
+![mapbaltimore](https://elipousson.github.io/mapbaltimore/logo.png)
+
+----
+
+![sfext](https://elipousson.github.io/sfext/logo.png)
+
+----
+
+![getdata](https://elipousson.github.io/getdata/logo.png)
+
+----
+
+::: notes
+
+Initially:
+
+- 2021?: Split `{overedge}` from `{mapbaltimore}`
+- Split:
 - June 2022: Split `{overedge}` into a few smaller packages: `{sfext}`, `{getdata}`, and `{maplayer}`
 - `{streetmixr}` for working with the Street Mix API
 - January 2023: `{officerExtras}` for extending the `{officer}` package (and working with tables and heading in Microsoft Word)
 - May 2023: `{feltr}` for working with the Felt API (Felt is a new, highly recommend online mapping application)
 
-## How did I get to this current approach?
+More recently:
 
 - July 2023: `{getACS}` for downloading `{tidycensus}` data, adding supplementary metadata, and making plots and tables
 - September 2023: `{sharepointr}` for reading and writing files and lists from SharePoint
+
+:::
 
 ## What are some local data projects am I working on?
 
 A few packages:
 
-- `{bcpss}`
-- `{marylandedu}`
-- `{baltimorecensus}`
-- `{baltimoremls}`
+- `{bcpss}`: Tidy survey, program, and zone data from and about Baltimore City Public Schools. 
+- `{marylandedu}`: Tidy enrollment and demographic data from Maryland State Department of Education.
+- `{baltimorecensus}`: Accessible U.S. Census geographies.
+- `{baltimoremls}`: Utility functions for Bright MLS sales data.
 
 ## What are some local data projects am I working on?
 
@@ -93,7 +117,7 @@ A few data analyses (all WIP):
 
 - bcpsstransportation*
 - baltimorecrash*
-- baltimoretaxsale
+- [baltimoretaxsale](https://github.com/elipousson/baltimoretaxsale)
 
 ## What am I hoping to try next?
 
@@ -101,19 +125,21 @@ A few data analyses (all WIP):
 - `{rdeck}`
 - `{arcgislayers}`
 
-# Planning with R
+# Applications of R in Planning
+
+![John Ruhrah EMS INSPIRE Plan](images/2023-06-08_john-ruhrah-ems_inspire-plan_cover.jpg)
 
 ## All the little things
 
+- Maps
 - Tables
 - Graphics
-- Maps
-- Call-outs
+- Writing
 
 ## Making the little things takes a lot of work
 
-- Data import
-- Data transformation
+- Data import and tidying
+- Data transformation and analysis
 - Managing text
 - Managing multiple output formats
 
