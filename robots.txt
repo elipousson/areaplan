@@ -1,1 +1,1 @@
-Sitemap: https://elipousson.github.io/areaplan/sitemap.xml
+Sitemap: https://github.com/elipousson/areaplan/sitemap.xml
