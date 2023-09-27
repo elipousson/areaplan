@@ -7,17 +7,17 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
-
-  <meta name="author" content="Eli Pousson">
-  <title>Area Planning Work with R</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
-  <style>
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.339">
+<meta name="author" content="Eli Pousson">
+<title>Area Planning Work with R</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+<style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -95,12 +95,12 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
-  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
+<link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+<link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+<link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+<link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+<link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+<style type="text/css">
 
   .callout {
     margin-top: 1em;
@@ -221,7 +221,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -297,7 +298,7 @@
   }
 
   </style>
-  <style type="text/css">
+<style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -390,8 +391,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Area Planning Work with R</h1>
+<section id="title-slide" class="quarto-title-block center"><h1 class="title">Area Planning Work with R</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -401,78 +401,60 @@ Eli Pousson
 </div>
 </div>
 
-</section>
-<section id="about" class="title-slide slide level1 center">
-<h1>About</h1>
+</section><section id="about" class="title-slide slide level1 center"><h1>About</h1>
 
-</section>
+</section><section><section id="package-development" class="title-slide slide level1 center"><h1>Package development</h1>
 
-<section>
-<section id="package-development" class="title-slide slide level1 center">
-<h1>Package development</h1>
-
-</section>
-<section id="what-packages-am-i-using" class="title-slide slide level2 center">
-<h2>What packages am I using?</h2>
-<p>My data analysis and mapping work depends on a tall stack of open-source packages especially from the <code>{tidyverse}</code> along with the <a href="">rOpenSci</a> and rspatial communities.</p>
+</section><section id="what-packages-am-i-using" class="title-slide slide level2 center"><h2>What packages am I using?</h2>
+<p>My data analysis and mapping work depends on a tall stack of open-source packages especially from the <a href="https://tidyverse.tidyverse.org">tidyverse</a> along with the <a href="">rOpenSci</a> and rspatial communities.</p>
 <p>I have a lot of favorite R packages across a few different categories:</p>
 <ul>
 <li>package development</li>
 <li>programming</li>
 <li>visualization</li>
 <li>data management</li>
-</ul>
-</section>
-<section id="packages-i-use-for-package-development" class="slide level3">
-<h3>Packages I use for package development</h3>
+</ul></section><section id="packages-i-use-for-package-development" class="slide level3"><h3>Packages I use for package development</h3>
 <ul>
-<li><code>{usethis}</code></li>
-<li><code>{devtools}</code></li>
-<li><code>{sinew}</code></li>
-<li><code>{testthat}</code></li>
-<li><code>{pkgdown}</code></li>
-</ul>
-</section>
-<section id="packages-i-use-for-programming" class="slide level3">
-<h3>Packages I use for programming</h3>
+<li><a href="https://usethis.r-lib.org">usethis</a></li>
+<li><a href="https://devtools.r-lib.org/">devtools</a></li>
+<li><a href="https://github.com/yonicd/sinew">sinew</a></li>
+<li><a href="https://testthat.r-lib.org">testthat</a></li>
+<li><a href="https://pkgdown.r-lib.org">pkgdown</a></li>
+</ul></section><section id="packages-i-use-for-programming" class="slide level3"><h3>Packages I use for programming</h3>
 <ul>
-<li><code>{sf}</code></li>
-<li><code>{dplyr}</code> (and <code>{vctrs}</code>)</li>
-<li><code>{rlang}</code></li>
-<li><code>{cli}</code></li>
-<li><code>{httr2}</code></li>
-</ul>
-</section>
-<section id="packages-i-use-for-visualization" class="slide level3">
-<h3>Packages I use for visualization</h3>
+<li><a href="https://r-spatial.github.io/sf/">sf</a></li>
+<li>
+<a href="https://dplyr.tidyverse.org">dplyr</a> (and <a href="https://vctrs.r-lib.org/">vctrs</a>)</li>
+<li><a href="https://rlang.r-lib.org">rlang</a></li>
+<li><a href="https://cli.r-lib.org">cli</a></li>
+<li><a href="https://httr2.r-lib.org">httr2</a></li>
+</ul></section><section id="packages-i-use-for-visualization" class="slide level3"><h3>Packages I use for visualization</h3>
 <ul>
 <li><a href="https://walker-data.com/mapboxapi/">mapboxapi</a></li>
-<li><code>{ggplot2}</code> (with Adobe Illustrator sometimes)</li>
-<li><code>{mapview}</code></li>
-<li><a href="https://elipousson.github.io/feltr/">feltr</a>* (with Felt)</li>
-<li><code>{gt}</code></li>
-</ul>
-</section>
-<section id="packages-i-use-for-data-management" class="slide level3">
-<h3>Packages I use for data management</h3>
+<li>
+<a href="https://ggplot2.tidyverse.org">ggplot2</a> (with Adobe Illustrator sometimes)</li>
+<li><a href="https://github.com/r-spatial/mapview">mapview</a></li>
+<li>
+<a href="https://elipousson.github.io/feltr/">feltr</a>* (with Felt)</li>
+<li><a href="https://gt.rstudio.com/">gt</a></li>
+</ul></section><section id="packages-i-use-for-data-management" class="slide level3"><h3>Packages I use for data management</h3>
 <ul>
-<li><code>{osmdata}</code> (with OpenStreetMap)</li>
-<li><code>{rairtable}</code> <a href="https://github.com/matthewjrogers/rairtable/tree/dev">development version</a>* (with Airtable)</li>
-<li><code>{googlesheets4}</code> (with Google Sheets)</li>
-<li><code>{officer}</code> (with Microsoft Word)</li>
-</ul>
-</section>
-
-<section id="when-did-i-start-building-packages" class="title-slide slide level2 center">
-<h2>When did I start building packages?</h2>
-<aside class="notes">
-<ul>
+<li>
+<a href="https://docs.ropensci.org/osmdata/">osmdata</a> (with OpenStreetMap)</li>
+<li>
+<a href="https://matthewjrogers.github.io/rairtable/">rairtable</a> <a href="https://github.com/matthewjrogers/rairtable/tree/dev">development version</a>* (with Airtable)</li>
+<li>
+<a href="https://googlesheets4.tidyverse.org">googlesheets4</a> (with Google Sheets)</li>
+<li>
+<a href="https://ardata-fr.github.io/officeverse/">officer</a> (with Microsoft Word)</li>
+</ul></section><section id="when-did-i-start-building-packages" class="title-slide slide level2 center"><h2>When did I start building packages?</h2>
+<aside class="notes"><ul>
 <li>June 2019: Started learning R</li>
-<li>Oct.&nbsp;2020: Started <code>{mapbaltimore}</code> after a webinar on working with the <code>{mapboxapi}</code> package</li>
-<li>Dec.&nbsp;2020: Started contributing to open-source packages, <code>{FlickrAPI}</code>, <code>{esri2sf}</code>, and <code>{mapboxapi}</code></li>
+<li>Oct.&nbsp;2020: Started <a href="https://github.com/elipousson/mapbaltimore">mapbaltimore</a> after a webinar on working with the <code>{mapboxapi}</code> package</li>
+<li>Dec.&nbsp;2020: Started contributing to open-source packages, <code>{FlickrAPI}</code>, <a href="https://github.com/elipousson/esri2sf/">esri2sf</a>, and <code>{mapboxapi}</code>
+</li>
 <li>November 2021: <code>{crashapi}</code> for accessing the National Highway Traffic Safety Administration (NHTSA) Fatality Analysis Reporting System (FARS) API</li>
-</ul>
-<style type="text/css">
+</ul><style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
           clip: rect(1px, 1px, 1px, 1px);
@@ -482,68 +464,53 @@ Eli Pousson
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside>
-</section>
-
-<section id="what-types-of-packages-am-i-working-on" class="title-slide slide level2 center">
-<h2>What types of packages am I working on?</h2>
+      }</style></aside></section><section id="what-types-of-packages-am-i-working-on" class="title-slide slide level2 center"><h2>What types of packages am I working on?</h2>
 <ul>
 <li>local data packages</li>
 <li>data access packages</li>
 <li>analysis and visualization packages</li>
-</ul>
-</section>
-
-<section id="how-did-i-get-to-this-current-approach" class="title-slide slide level2 center">
-<h2>How did I get to this current approach?</h2>
+</ul></section><section id="how-did-i-get-to-this-current-approach" class="title-slide slide level2 center"><h2>How did I get to this current approach?</h2>
 <p>Data packages 👉 Utility packages 👉 Visualization packages</p>
 <div class="columns">
 <div class="column" style="width:25%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://elipousson.github.io/mapbaltimore/logo.png"></p>
-<figcaption>mapbaltimore</figcaption>
-</figure>
+<figure><p><img data-src="https://elipousson.github.io/mapbaltimore/logo.png"></p>
+<figcaption>mapbaltimore</figcaption></figure>
 </div>
 </div><div class="column" style="width:25%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://elipousson.github.io/sfext/logo.png"></p>
-<figcaption>sfext</figcaption>
-</figure>
+<figure><p><img data-src="https://elipousson.github.io/sfext/logo.png"></p>
+<figcaption>sfext</figcaption></figure>
 </div>
 </div><div class="column" style="width:25%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://elipousson.github.io/getdata/logo.png"></p>
-<figcaption>maplayer</figcaption>
-</figure>
+<figure><p><img data-src="https://elipousson.github.io/getdata/logo.png"></p>
+<figcaption>maplayer</figcaption></figure>
 </div>
 </div><div class="column" style="width:25%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://elipousson.github.io/maplayer/logo.png"></p>
-<figcaption>maplayer</figcaption>
-</figure>
+<figure><p><img data-src="https://elipousson.github.io/maplayer/logo.png"></p>
+<figcaption>maplayer</figcaption></figure>
 </div>
 </div>
 </div>
-<aside class="notes">
-<p>Initially:</p>
+<aside class="notes"><p>Initially:</p>
 <ul>
-<li>2021?: Split <code>{overedge}</code> from <code>{mapbaltimore}</code></li>
+<li>2021?: Split <code>{overedge}</code> from <a href="https://github.com/elipousson/mapbaltimore">mapbaltimore</a>
+</li>
 <li>Split:</li>
-<li>June 2022: Split <code>{overedge}</code> into a few smaller packages: <code>{sfext}</code>, <code>{getdata}</code>, and <code>{maplayer}</code></li>
-<li><code>{streetmixr}</code> for working with the Street Mix API</li>
-<li>January 2023: <code>{officerExtras}</code> for extending the <code>{officer}</code> package (and working with tables and heading in Microsoft Word)</li>
-<li>May 2023: <code>{feltr}</code> for working with the Felt API (Felt is a new, highly recommend online mapping application)</li>
+<li>June 2022: Split <code>{overedge}</code> into a few smaller packages: <a href="https://github.com/elipousson/sfext">sfext</a>, <a href="https://github.com/elipousson/getdata">getdata</a>, and <a href="https://github.com/elipousson/maplayer">maplayer</a>
+</li>
+<li>
+<code>{streetmixr}</code> for working with the Street Mix API</li>
+<li>January 2023: <a href="https://github.com/elipousson/officerExtras">officerExtras</a> for extending the <a href="https://ardata-fr.github.io/officeverse/">officer</a> package (and working with tables and heading in Microsoft Word)</li>
+<li>May 2023: <a href="https://github.com/elipousson/feltr/">feltr</a> for working with the Felt API (Felt is a new, highly recommend online mapping application)</li>
 </ul>
 <p>More recently:</p>
 <ul>
-<li>July 2023: <code>{getACS}</code> for downloading <code>{tidycensus}</code> data, adding supplementary metadata, and making plots and tables</li>
-<li>September 2023: <code>{sharepointr}</code> for reading and writing files and lists from SharePoint</li>
-</ul>
-<style type="text/css">
+<li>July 2023: <a href="https://elipousson.github.io/getACS/">getACS</a> for downloading <a href="https://walker-data.com/tidycensus/">tidycensus</a> data, adding supplementary metadata, and making plots and tables</li>
+<li>September 2023: <a href="https://github.com/elipousson/sharepointr">sharepointr</a> for reading and writing files and lists from SharePoint</li>
+</ul><style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
           clip: rect(1px, 1px, 1px, 1px);
@@ -553,96 +520,62 @@ Eli Pousson
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside>
-</section>
-
-<section id="what-are-some-local-data-projects-am-i-working-on" class="title-slide slide level2 center">
-<h2>What are some local data projects am I working on?</h2>
+      }</style></aside></section><section id="what-are-some-local-data-projects-am-i-working-on" class="title-slide slide level2 center"><h2>What are some local data projects am I working on?</h2>
 <p>A few packages:</p>
 <ul>
-<li><code>{bcpss}</code>: Tidy survey, program, and zone data from and about Baltimore City Public Schools.</li>
-<li><code>{marylandedu}</code>: Tidy enrollment and demographic data from Maryland State Department of Education.</li>
-<li><code>{baltimorecensus}</code>: Accessible U.S. Census geographies.</li>
-<li><code>{baltimoremls}</code>: Utility functions for Bright MLS sales data.</li>
-</ul>
-</section>
-
-<section id="what-are-some-local-data-projects-am-i-working-on-1" class="title-slide slide level2 center">
-<h2>What are some local data projects am I working on?</h2>
+<li>
+<a href="https://github.com/elipousson/bcpss">bcpss</a>: Tidy survey, program, and zone data from and about Baltimore City Public Schools.</li>
+<li>
+<a href="https://github.com/elipousson/marylandedu">marylandedu</a>: Tidy enrollment and demographic data from Maryland State Department of Education.</li>
+<li>
+<a href="https://github.com/elipousson/baltimorecensus">baltimorecensus</a>: Accessible U.S. Census geographies.</li>
+<li>
+<code>{baltimoremls}</code>: Utility functions for Bright MLS sales data.</li>
+</ul></section><section id="what-are-some-local-data-projects-am-i-working-on-1" class="title-slide slide level2 center"><h2>What are some local data projects am I working on?</h2>
 <p>A few data analyses (all WIP):</p>
 <ul>
 <li>bcpsstransportation*</li>
 <li>baltimorecrash*</li>
 <li><a href="https://github.com/elipousson/baltimoretaxsale">baltimoretaxsale</a></li>
-</ul>
-</section>
-
-<section id="what-am-i-hoping-to-try-next" class="title-slide slide level2 center">
-<h2>What am I hoping to try next?</h2>
+</ul></section><section id="what-am-i-hoping-to-try-next" class="title-slide slide level2 center"><h2>What am I hoping to try next?</h2>
 <p>I’m still learning new approaches all the time. Here are a few packages I’m excited to learn:</p>
 <ul>
-<li><code>{targets}</code></li>
-<li><code>{rdeck}</code></li>
+<li><a href="https://docs.ropensci.org/targets/">targets</a></li>
+<li><a href="https://qfes.github.io/rdeck">rdeck</a></li>
 <li><code>{arcgislayers}</code></li>
-</ul>
-</section>
-</section>
-<section>
-<section id="applications-of-r-in-planning" class="title-slide slide level1 center">
-<h1>Applications of R in Planning</h1>
+</ul></section></section><section><section id="applications-of-r-in-planning" class="title-slide slide level1 center"><h1>Applications of R in Planning</h1>
 
-</section>
-<section class="slide level3">
-
-
-<img data-src="images/2023-06-08_john-ruhrah-ems_inspire-plan_cover.jpg" class="r-stretch quarto-figure-center"><p class="caption">John Ruhrah EMS INSPIRE Plan</p></section>
-<section id="all-the-little-things" class="title-slide slide level2 center">
-<h2>All the little things</h2>
+</section><section class="slide level3">
+<img data-src="images/2023-06-08_john-ruhrah-ems_inspire-plan_cover.jpg" class="r-stretch quarto-figure-center"><p class="caption">John Ruhrah EMS INSPIRE Plan</p></section><section id="all-the-little-things" class="title-slide slide level2 center"><h2>All the little things</h2>
 <ul>
 <li>Maps</li>
 <li>Tables</li>
 <li>Graphics</li>
 <li>Writing</li>
-</ul>
-</section>
-
-<section id="making-the-little-things-takes-a-lot-of-work" class="title-slide slide level2 center">
-<h2>Making the little things takes a lot of work</h2>
+</ul></section><section id="making-the-little-things-takes-a-lot-of-work" class="title-slide slide level2 center"><h2>Making the little things takes a lot of work</h2>
 <ul>
 <li>Data import and tidying</li>
 <li>Data transformation and analysis</li>
 <li>Managing text</li>
 <li>Managing multiple output formats</li>
-</ul>
-</section>
-
-<section id="building-demographic-data-tables-with-gt-and-getacs" class="title-slide slide level2 center">
-<h2>Building demographic data tables with <code>{gt}</code> and <code>{getACS}</code></h2>
+</ul></section><section id="building-demographic-data-tables-with-gt-and-getacs" class="title-slide slide level2 center"><h2>Building demographic data tables with <code>{gt}</code> and <code>{getACS}</code>
+</h2>
 <ul>
 <li>What do you do in advance?</li>
 <li>What do you do as needed?</li>
-</ul>
-</section>
-<section id="setup" class="slide level3">
-<h3>Setup</h3>
+</ul></section><section id="setup" class="slide level3"><h3>Setup</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># pak::pkg_install("elipousson/getACS")</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(getACS)</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="first-steps" class="slide level3">
-<h3>First steps</h3>
+</section><section id="first-steps" class="slide level3"><h3>First steps</h3>
 <ul>
 <li>Get data</li>
 <li>Combine with metadata</li>
 <li>Recalculate variables</li>
 <li>Use areal interpolation as needed</li>
-</ul>
-</section>
-<section class="slide level3">
-
-<p>Using getACS to get data, combine with metadata, and recalculate estimates as a share of the denominator:</p>
+</ul></section><section class="slide level3"><p>Using getACS to get data, combine with metadata, and recalculate estimates as a share of the denominator:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>delmarva_acs <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
 <span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">c</span>(<span class="st">"MD"</span>, <span class="st">"DC"</span>, <span class="st">"VA"</span>),</span>
@@ -679,9 +612,7 @@ Eli Pousson
 #   denominator_column_title &lt;chr&gt;, geography &lt;chr&gt;, state &lt;chr&gt;</code></pre>
 </div>
 </div>
-</section>
-<section id="next-steps" class="slide level3">
-<h3>Next steps</h3>
+</section><section id="next-steps" class="slide level3"><h3>Next steps</h3>
 <ul>
 <li>Subset data to area</li>
 <li>Recode values if needed</li>
@@ -700,13 +631,9 @@ Eli Pousson
 <span id="cb4-10"><a href="#cb4-10"></a>    <span class="at">table =</span> dc_acs<span class="sc">$</span>table_id</span>
 <span id="cb4-11"><a href="#cb4-11"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section class="slide level3">
-
-<div class="cell">
+</section><section class="slide level3"><div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>commute_acs_tbl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-
 <div id="nguoadvomk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#nguoadvomk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -1147,50 +1074,48 @@ Eli Pousson
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Mode of transportation">Mode of transportation</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Est.">Est.</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="% share">% share</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="column_title" class="gt_row gt_left">Car, truck, or van</td>
-<td headers="estimate" class="gt_row gt_right">131,329 ± 3,031</td>
-<td headers="perc_estimate" class="gt_row gt_right">44% ± 1%</td></tr>
-    <tr><td headers="column_title" class="gt_row gt_left">Public transportation (excluding taxicab)</td>
-<td headers="estimate" class="gt_row gt_right">100,595 ± 2,297</td>
-<td headers="perc_estimate" class="gt_row gt_right">34% ± 1%</td></tr>
-    <tr><td headers="column_title" class="gt_row gt_left">Walked</td>
-<td headers="estimate" class="gt_row gt_right">41,960 ± 1,475</td>
-<td headers="perc_estimate" class="gt_row gt_right">14% ± 0%</td></tr>
-    <tr><td headers="column_title" class="gt_row gt_left">Taxicab, motorcycle, bicycle, or other means</td>
-<td headers="estimate" class="gt_row gt_right">23,563 ± 1,485</td>
-<td headers="perc_estimate" class="gt_row gt_right">8% ± 0%</td></tr>
-  </tbody>
-  <tfoot class="gt_sourcenotes">
-    <tr>
-      <td class="gt_sourcenote" colspan="3">Source: 2017-2021 ACS 5-year Estimates, Table B08134.</td>
-    </tr>
-  </tfoot>
-  
+<table class="gt_table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead><tr class="header gt_col_headings">
+<th id="Mode of transportation" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Mode of transportation</th>
+<th id="Est." class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Est.</th>
+<th id="% share" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">% share</th>
+</tr></thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="column_title">Car, truck, or van</td>
+<td class="gt_row gt_right" headers="estimate">131,329 ± 3,031</td>
+<td class="gt_row gt_right" headers="perc_estimate">44% ± 1%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="column_title">Public transportation (excluding taxicab)</td>
+<td class="gt_row gt_right" headers="estimate">100,595 ± 2,297</td>
+<td class="gt_row gt_right" headers="perc_estimate">34% ± 1%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="column_title">Walked</td>
+<td class="gt_row gt_right" headers="estimate">41,960 ± 1,475</td>
+<td class="gt_row gt_right" headers="perc_estimate">14% ± 0%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="column_title">Taxicab, motorcycle, bicycle, or other means</td>
+<td class="gt_row gt_right" headers="estimate">23,563 ± 1,485</td>
+<td class="gt_row gt_right" headers="perc_estimate">8% ± 0%</td>
+</tr>
+</tbody>
+<tfoot class="gt_sourcenotes"><tr class="odd">
+<td colspan="3" class="gt_sourcenote">Source: 2017-2021 ACS 5-year Estimates, Table B08134.</td>
+</tr></tfoot>
 </table>
 </div>
 </div>
 </div>
-</section>
-
-<section id="map-making-with-getdata-maplayer-and-mapboxapi" class="title-slide slide level2 center">
-<h2>Map-making with <code>{getdata}</code>, <code>{maplayer}</code>, and <code>{mapboxapi}</code></h2>
+</section><section id="map-making-with-getdata-maplayer-and-mapboxapi" class="title-slide slide level2 center"><h2>Map-making with <code>{getdata}</code>, <code>{maplayer}</code>, and <code>{mapboxapi}</code>
+</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">library</span>(getdata)</span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="fu">library</span>(maplayer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="downloading-data" class="slide level3">
-<h3>Downloading data</h3>
+</section><section id="downloading-data" class="slide level3"><h3>Downloading data</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>dc_wards <span class="ot">&lt;-</span> <span class="fu">get_location</span>(</span>
 <span id="cb7-2"><a href="#cb7-2"></a>  <span class="st">"https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Demographic_WebMercator/MapServer/39"</span></span>
@@ -1349,9 +1274,7 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 8 MULTIPOLYGON (((-8576945 46...</code></pre>
 </div>
 </div>
-</section>
-<section id="subsetting-data" class="slide level3">
-<h3>Subsetting data</h3>
+</section><section id="subsetting-data" class="slide level3"><h3>Subsetting data</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>ward_5 <span class="ot">&lt;-</span> <span class="fu">get_location</span>(</span>
 <span id="cb9-2"><a href="#cb9-2"></a>  dc_wards,</span>
@@ -1400,9 +1323,7 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 5 MULTIPOLYGON (((-8573742 47...</code></pre>
 </div>
 </div>
-</section>
-<section id="make-a-basemap" class="slide level3">
-<h3>Make a basemap</h3>
+</section><section id="make-a-basemap" class="slide level3"><h3>Make a basemap</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">make_mapbox_map</span>(</span>
 <span id="cb11-2"><a href="#cb11-2"></a>  dc_wards,</span>
@@ -1413,9 +1334,7 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 <span id="cb11-7"><a href="#cb11-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="area-planning-work_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
-<section id="make-a-basemap-1" class="slide level3">
-<h3>Make a basemap</h3>
+<img data-src="area-planning-work_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section><section id="make-a-basemap-1" class="slide level3"><h3>Make a basemap</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>ward_5_map <span class="ot">&lt;-</span> <span class="fu">make_mapbox_map</span>(</span>
 <span id="cb12-2"><a href="#cb12-2"></a>  ward_5,</span>
@@ -1428,9 +1347,7 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 <span id="cb12-9"><a href="#cb12-9"></a>ward_5_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="area-planning-work_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
-<section id="add-an-inset-map" class="slide level3">
-<h3>Add an inset map</h3>
+<img data-src="area-planning-work_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section><section id="add-an-inset-map" class="slide level3"><h3>Add an inset map</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">layer_inset</span>(</span>
 <span id="cb13-2"><a href="#cb13-2"></a>  <span class="at">map =</span> ward_5_map,</span>
@@ -1442,9 +1359,7 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 <span id="cb13-8"><a href="#cb13-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="area-planning-work_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
-<section id="get-more-area-data" class="slide level3">
-<h3>Get more area data</h3>
+<img data-src="area-planning-work_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section><section id="get-more-area-data" class="slide level3"><h3>Get more area data</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>ward_5_schools <span class="ot">&lt;-</span> <span class="fu">get_osm_data</span>(</span>
 <span id="cb14-2"><a href="#cb14-2"></a>    ward_5,</span>
@@ -1453,9 +1368,7 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 <span id="cb14-5"><a href="#cb14-5"></a>    <span class="at">geometry =</span> <span class="st">"polygon"</span></span>
 <span id="cb14-6"><a href="#cb14-6"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="add-icon-markers-to-a-map" class="slide level3">
-<h3>Add icon markers to a map</h3>
+</section><section id="add-icon-markers-to-a-map" class="slide level3"><h3>Add icon markers to a map</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>ward_5_map <span class="sc">+</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a>  <span class="fu">layer_icon</span>(</span>
@@ -1470,35 +1383,17 @@ Projected CRS: WGS 84 / Pseudo-Mercator
 <img data-src="area-planning-work_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"><div class="footer footer-default">
 
 </div>
-</section>
-</section>
-    </div>
+</section></section>
+</div>
   </div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../site_libs/revealjs/dist/reveal.js"></script>
-  <!-- reveal.js plugins -->
-  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
-  
-
-  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-
-  <script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../site_libs/revealjs/plugin/search/search.js"></script><script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1682,9 +1577,7 @@ Projected CRS: WGS 84 / Pseudo-Mercator
           RevealZoom
         ]
       });
-    </script>
-    
-    <script>
+    </script><script>
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
@@ -1719,9 +1612,7 @@ Projected CRS: WGS 84 / Pseudo-Mercator
         }
 
       })();
-    </script>
-
-    <script id="quarto-html-after-body" type="application/javascript">
+    </script><script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
         const mode = bsSheetEl.getAttribute("data-mode");
@@ -1797,10 +1688,9 @@ Projected CRS: WGS 84 / Pseudo-Mercator
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1810,8 +1700,17 @@ Projected CRS: WGS 84 / Pseudo-Mercator
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1867,6 +1766,6 @@ Projected CRS: WGS 84 / Pseudo-Mercator
       }
     });
     </script>
-    
+
 
 </body></html>
