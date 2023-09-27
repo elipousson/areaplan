@@ -25,21 +25,14 @@
     "href": "slides/area-planning-work.html#how-did-i-get-to-this-current-approach",
     "title": "Area Planning Work with R",
     "section": "How did I get to this current approach?",
-    "text": "How did I get to this current approach?\n\nJune 2022: Split {overedge} into a few smaller packages: sfext, getdata, and maplayer\n\n\n{streetmixr} for working with the Street Mix API\nJanuary 2023: officerExtras for extending the officer package (and working with tables and heading in Microsoft Word)\nMay 2023: feltr for working with the Felt API (Felt is a new, highly recommend online mapping application)"
-  },
-  {
-    "objectID": "slides/area-planning-work.html#how-did-i-get-to-this-current-approach-1",
-    "href": "slides/area-planning-work.html#how-did-i-get-to-this-current-approach-1",
-    "title": "Area Planning Work with R",
-    "section": "How did I get to this current approach?",
-    "text": "How did I get to this current approach?\n\nJuly 2023: getACS for downloading tidycensus data, adding supplementary metadata, and making plots and tables\nSeptember 2023: sharepointr for reading and writing files and lists from SharePoint"
+    "text": "How did I get to this current approach?\nData packages -&gt; Utility packages -&gt; Visualization packages"
   },
   {
     "objectID": "slides/area-planning-work.html#what-are-some-local-data-projects-am-i-working-on",
     "href": "slides/area-planning-work.html#what-are-some-local-data-projects-am-i-working-on",
     "title": "Area Planning Work with R",
     "section": "What are some local data projects am I working on?",
-    "text": "What are some local data projects am I working on?\nA few packages:\n\nbcpss\nmarylandedu\nbaltimorecensus\n{baltimoremls}"
+    "text": "What are some local data projects am I working on?\nA few packages:\n\n\nbcpss: Tidy survey, program, and zone data from and about Baltimore City Public Schools.\n\nmarylandedu: Tidy enrollment and demographic data from Maryland State Department of Education.\n\nbaltimorecensus: Accessible U.S. Census geographies.\n\n{baltimoremls}: Utility functions for Bright MLS sales data."
   },
   {
     "objectID": "slides/area-planning-work.html#what-are-some-local-data-projects-am-i-working-on-1",
@@ -60,14 +53,14 @@
     "href": "slides/area-planning-work.html#all-the-little-things",
     "title": "Area Planning Work with R",
     "section": "All the little things",
-    "text": "All the little things\n\nTables\nGraphics\nMaps\nCall-outs"
+    "text": "All the little things\n\nMaps\nTables\nGraphics\nWriting"
   },
   {
     "objectID": "slides/area-planning-work.html#making-the-little-things-takes-a-lot-of-work",
     "href": "slides/area-planning-work.html#making-the-little-things-takes-a-lot-of-work",
     "title": "Area Planning Work with R",
     "section": "Making the little things takes a lot of work",
-    "text": "Making the little things takes a lot of work\n\nData import\nData transformation\nManaging text\nManaging multiple output formats"
+    "text": "Making the little things takes a lot of work\n\nData import and tidying\nData transformation and analysis\nManaging text\nManaging multiple output formats"
   },
   {
     "objectID": "slides/area-planning-work.html#example-tables-with-demographic-data-using-getacs",
@@ -96,6 +89,13 @@
     "title": "Area Planning Work with R",
     "section": "Next steps",
     "text": "Next steps\n\nSubset data to area\nRecode values if needed\nCreate table or visualization"
+  },
+  {
+    "objectID": "slides/area-planning-work.html#example-maps-using-getdata-maplayer-and-mapboxapi",
+    "href": "slides/area-planning-work.html#example-maps-using-getdata-maplayer-and-mapboxapi",
+    "title": "Area Planning Work with R",
+    "section": "Example: Maps using {getdata}, {maplayer}, and {mapboxapi}\n",
+    "text": "Example: Maps using {getdata}, {maplayer}, and {mapboxapi}"
   },
   {
     "objectID": "index.html",
