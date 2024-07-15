@@ -1,17 +1,38 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About",
+    "section": "",
+    "text": "This site collects material related to my area planning work in R.\n\nArea Planning Work in R - 2023 September 27"
+  },
+  {
+    "objectID": "index.html#packages",
+    "href": "index.html#packages",
+    "title": "About",
+    "section": "Packages",
+    "text": "Packages\nThis is a list of packages that are part of the workflow described in this guide or packages developed as part of related work.\n\nGeneral packages\n\nsfext\ngetdata\nmaplayer\n\n\n\nBaltimore and Maryland data packages\n\nmapbaltimore\nbcpss\nmapmaryland\nmarylandedu\n\n\n\nPlanning and mapping-related packages\n\nstreetmixr\ncrashapi\ngetACS\nfeltr\nbingmapr\n\n\n\nUtility packages\n\nfilenamr\npapersize\nsharepointr\nofficerExtras"
+  },
+  {
+    "objectID": "index.html#related-resources",
+    "href": "index.html#related-resources",
+    "title": "About",
+    "section": "Related resources",
+    "text": "Related resources\n\nR for planners: A list of R projects and packages created for and by community and transportation planners for research and planning practice."
+  },
+  {
     "objectID": "slides/area-planning-work.html#what-packages-am-i-using",
     "href": "slides/area-planning-work.html#what-packages-am-i-using",
     "title": "Area Planning Work with R",
     "section": "What packages am I using?",
-    "text": "What packages am I using?\nMy data analysis and mapping work depends on a tall stack of open-source packages especially from the tidyverse along with the rOpenSci and rspatial communities.\nI have a lot of favorite R packages across a few different categories:\n\npackage development\nprogramming\nvisualization\ndata management"
+    "text": "What packages am I using?\nMy data analysis and mapping work depends on a tall stack of open-source packages especially from the {tidyverse} along with the rOpenSci and rspatial communities.\nI have a lot of favorite R packages across a few different categories:\n\npackage development\nprogramming\nvisualization\ndata management"
   },
   {
     "objectID": "slides/area-planning-work.html#when-did-i-start-building-packages",
     "href": "slides/area-planning-work.html#when-did-i-start-building-packages",
     "title": "Area Planning Work with R",
     "section": "When did I start building packages?",
-    "text": "When did I start building packages?\n\nJune 2019: Started learning R\nOct. 2020: Started mapbaltimore after a webinar on working with the {mapboxapi} package\nDec. 2020: Started contributing to open-source packages, {FlickrAPI}, esri2sf, and {mapboxapi}\n\nNovember 2021: {crashapi} for accessing the National Highway Traffic Safety Administration (NHTSA) Fatality Analysis Reporting System (FARS) API"
+    "text": "When did I start building packages?\n\n\nJune 2019: Started learning R\nOct. 2020: Started {mapbaltimore} after a webinar on working with the {mapboxapi} package\nDec. 2020: Started contributing to open-source packages, {FlickrAPI}, {esri2sf}, and {mapboxapi}\nNovember 2021: {crashapi} for accessing the National Highway Traffic Safety Administration (NHTSA) Fatality Analysis Reporting System (FARS) API"
   },
   {
     "objectID": "slides/area-planning-work.html#what-types-of-packages-am-i-working-on",
@@ -25,14 +46,14 @@
     "href": "slides/area-planning-work.html#how-did-i-get-to-this-current-approach",
     "title": "Area Planning Work with R",
     "section": "How did I get to this current approach?",
-    "text": "How did I get to this current approach?\nData packages 👉 Utility packages 👉 Visualization packages\n\n\n\n\nmapbaltimore\n\n\n\n\nsfext\n\n\n\n\nmaplayer\n\n\n\n\nmaplayer\n\n\n\nInitially:\n\n2021?: Split {overedge} from mapbaltimore\n\nSplit:\nJune 2022: Split {overedge} into a few smaller packages: sfext, getdata, and maplayer\n\n\n{streetmixr} for working with the Street Mix API\nJanuary 2023: officerExtras for extending the officer package (and working with tables and heading in Microsoft Word)\nMay 2023: feltr for working with the Felt API (Felt is a new, highly recommend online mapping application)\n\nMore recently:\n\nJuly 2023: getACS for downloading tidycensus data, adding supplementary metadata, and making plots and tables\nSeptember 2023: sharepointr for reading and writing files and lists from SharePoint"
+    "text": "How did I get to this current approach?\nData packages 👉 Utility packages 👉 Visualization packages\n\n\n\n\n\nmapbaltimore\n\n\n\n\n\n\nsfext\n\n\n\n\n\n\nmaplayer\n\n\n\n\n\n\nmaplayer\n\n\n\n\nInitially:\n\n2021?: Split {overedge} from {mapbaltimore}\nSplit:\nJune 2022: Split {overedge} into a few smaller packages: {sfext}, {getdata}, and {maplayer}\n{streetmixr} for working with the Street Mix API\nJanuary 2023: {officerExtras} for extending the {officer} package (and working with tables and heading in Microsoft Word)\nMay 2023: {feltr} for working with the Felt API (Felt is a new, highly recommend online mapping application)\n\nMore recently:\n\nJuly 2023: {getACS} for downloading {tidycensus} data, adding supplementary metadata, and making plots and tables\nSeptember 2023: {sharepointr} for reading and writing files and lists from SharePoint"
   },
   {
     "objectID": "slides/area-planning-work.html#what-are-some-local-data-projects-am-i-working-on",
     "href": "slides/area-planning-work.html#what-are-some-local-data-projects-am-i-working-on",
     "title": "Area Planning Work with R",
     "section": "What are some local data projects am I working on?",
-    "text": "What are some local data projects am I working on?\nA few packages:\n\n\nbcpss: Tidy survey, program, and zone data from and about Baltimore City Public Schools.\n\nmarylandedu: Tidy enrollment and demographic data from Maryland State Department of Education.\n\nbaltimorecensus: Accessible U.S. Census geographies.\n\n{baltimoremls}: Utility functions for Bright MLS sales data."
+    "text": "What are some local data projects am I working on?\nA few packages:\n\n{bcpss}: Tidy survey, program, and zone data from and about Baltimore City Public Schools.\n{marylandedu}: Tidy enrollment and demographic data from Maryland State Department of Education.\n{baltimorecensus}: Accessible U.S. Census geographies.\n{baltimoremls}: Utility functions for Bright MLS sales data."
   },
   {
     "objectID": "slides/area-planning-work.html#what-are-some-local-data-projects-am-i-working-on-1",
@@ -46,7 +67,7 @@
     "href": "slides/area-planning-work.html#what-am-i-hoping-to-try-next",
     "title": "Area Planning Work with R",
     "section": "What am I hoping to try next?",
-    "text": "What am I hoping to try next?\nI’m still learning new approaches all the time. Here are a few packages I’m excited to learn:\n\ntargets\nrdeck\n{arcgislayers}"
+    "text": "What am I hoping to try next?\nI’m still learning new approaches all the time. Here are a few packages I’m excited to learn:\n\n{targets}\n{rdeck}\n{arcgislayers}"
   },
   {
     "objectID": "slides/area-planning-work.html#all-the-little-things",
@@ -66,28 +87,14 @@
     "objectID": "slides/area-planning-work.html#building-demographic-data-tables-with-gt-and-getacs",
     "href": "slides/area-planning-work.html#building-demographic-data-tables-with-gt-and-getacs",
     "title": "Area Planning Work with R",
-    "section": "Building demographic data tables with {gt} and {getACS}\n",
-    "text": "Building demographic data tables with {gt} and {getACS}\n\n\nWhat do you do in advance?\nWhat do you do as needed?"
+    "section": "Building demographic data tables with {gt} and {getACS}",
+    "text": "Building demographic data tables with {gt} and {getACS}\n\nWhat do you do in advance?\nWhat do you do as needed?"
   },
   {
     "objectID": "slides/area-planning-work.html#map-making-with-getdata-maplayer-and-mapboxapi",
     "href": "slides/area-planning-work.html#map-making-with-getdata-maplayer-and-mapboxapi",
     "title": "Area Planning Work with R",
-    "section": "Map-making with {getdata}, {maplayer}, and {mapboxapi}\n",
-    "text": "Map-making with {getdata}, {maplayer}, and {mapboxapi}\n\n\nlibrary(getdata)\nlibrary(maplayer)"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "About",
-    "section": "",
-    "text": "This site collects material related to my area planning work in R.\n\nArea Planning Work in R - 2023 September 27"
-  },
-  {
-    "objectID": "index.html#packages",
-    "href": "index.html#packages",
-    "title": "About",
-    "section": "Packages",
-    "text": "Packages\nThis is a list of packages that are part of the workflow described in this guide or packages developed as part of related work.\n\nGeneral packages\n\nsfext\ngetdata\nmaplayer\n\n\n\nLocal data packages\n\nmapbaltimore\nbcpss\nmapmaryland\nmarylandedu\n\n\n\nPlanning and mapping-related packages\n\nstreetmixr\ncrashapi\ngetACS\nfeltr\nbingmapr\n\n\n\nUtility packages\n\nfilenamr\npapersize\nsharepointr\nofficerExtras"
+    "section": "Map-making with {getdata}, {maplayer}, and {mapboxapi}",
+    "text": "Map-making with {getdata}, {maplayer}, and {mapboxapi}\n\nlibrary(getdata)\nlibrary(maplayer)"
   }
 ]
