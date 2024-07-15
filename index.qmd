@@ -17,28 +17,32 @@ This is a list of packages that are part of the workflow described in this guide
 
 ### General packages
 
-- [sfext](https://elipousson.github.io/sfext)
-- [getdata](https://elipousson.github.io/getdata)
-- [maplayer](https://elipousson.github.io/maplayer)
+-   [sfext](https://elipousson.github.io/sfext)
+-   [getdata](https://elipousson.github.io/getdata)
+-   [maplayer](https://elipousson.github.io/maplayer)
 
-### Local data packages
+### Baltimore and Maryland data packages
 
-- [mapbaltimore](https://elipousson.github.io/mapbaltimore)
-- [bcpss](https://elipousson.github.io/bcpss)
-- [mapmaryland](https://elipousson.github.io/mapmaryland)
-- [marylandedu](https://elipousson.github.io/marylandedu)
+-   [mapbaltimore](https://elipousson.github.io/mapbaltimore)
+-   [bcpss](https://elipousson.github.io/bcpss)
+-   [mapmaryland](https://elipousson.github.io/mapmaryland)
+-   [marylandedu](https://elipousson.github.io/marylandedu)
 
 ### Planning and mapping-related packages
 
-- [streetmixr](https://elipousson.github.io/feltr)
-- [crashapi](https://elipousson.github.io/crashapi)
-- [getACS](https://elipousson.github.io/crashapi)
-- [feltr](https://elipousson.github.io/feltr)
-- [bingmapr](https://elipousson.github.io/feltr)
+-   [streetmixr](https://elipousson.github.io/feltr)
+-   [crashapi](https://elipousson.github.io/crashapi)
+-   [getACS](https://elipousson.github.io/crashapi)
+-   [feltr](https://elipousson.github.io/feltr)
+-   [bingmapr](https://elipousson.github.io/feltr)
 
 ### Utility packages
 
-- [filenamr](https://elipousson.github.io/filenamr)
-- [papersize](https://elipousson.github.io/papersize)
-- [sharepointr](https://elipousson.github.io/sharepointr)
-- [officerExtras](https://elipousson.github.io/officerExtras)
+-   [filenamr](https://elipousson.github.io/filenamr)
+-   [papersize](https://elipousson.github.io/papersize)
+-   [sharepointr](https://elipousson.github.io/sharepointr)
+-   [officerExtras](https://elipousson.github.io/officerExtras)
+
+## Related resources
+
+-   [R for planners](https://github.com/stars/elipousson/lists/r-for-planners): A list of R projects and packages created for and by community and transportation planners for research and planning practice.
