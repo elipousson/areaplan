@@ -31,10 +31,10 @@ This is a list of packages that are part of the workflow described in this guide
 ### Planning and mapping-related packages
 
 -   [streetmixr](https://elipousson.github.io/feltr)
--   [crashapi](https://elipousson.github.io/crashapi)
+-   [crashapi](https://elipousson.github.io/getACS)
 -   [getACS](https://elipousson.github.io/crashapi)
 -   [feltr](https://elipousson.github.io/feltr)
--   [bingmapr](https://elipousson.github.io/feltr)
+-   [bingmapr](https://elipousson.github.io/bingmapr)
 
 ### Utility packages
 
